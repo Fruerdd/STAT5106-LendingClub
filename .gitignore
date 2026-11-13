@@ -1,0 +1,44 @@
+# Local environments and IDE settings
+.venv/
+.idea/
+
+# Python caches and tooling
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Temporary and operating-system files
+.DS_Store
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Local datasets: only documentation and placeholders are trackable
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+data/cleaned/*
+!data/cleaned/.gitkeep
+
+# Model artefacts and large intermediate data
+models/
+artifacts/
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.model
+*.ckpt
+*.onnx
+*.npy
+*.npz
+*.parquet
+*.feather
