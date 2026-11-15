@@ -19,7 +19,7 @@ if __package__ in {None, ""}:
 
 from src.paths import CLEANED_DATA_DIR, RAW_DATA_PATH
 
-MINIMUM_INPUT_COLUMNS = frozenset({"loan_status", "issue_d"})
+MINIMUM_INPUT_COLUMNS = frozenset({"loan_status"})
 ORIGINATION_COLUMNS = (
     "id",
     "loan_amnt",
@@ -32,7 +32,7 @@ ORIGINATION_COLUMNS = (
     "home_ownership",
     "annual_inc",
     "verification_status",
-    "issue_d",
+    # "issue_d",
     "loan_status",
     "purpose",
     "addr_state",
@@ -169,7 +169,9 @@ def _coerce_numeric(
 
 
 def _parse_dates(frame: pd.DataFrame, invalid_values: dict[str, int]) -> None:
-    issue_source = frame["issue_d"]
+    issue_source = frame.get("issue_d")
+    if issue_source is None:  # add judgement
+        return  # add judgement
     issue_date = pd.to_datetime(issue_source, format="%b-%Y", errors="coerce")
     invalid_values["issue_d"] = int((_present_mask(issue_source) & issue_date.isna()).sum())
     frame["issue_date"] = issue_date
@@ -300,7 +302,8 @@ def clean_dataframe(raw: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
         assert not cleaned["credit_history_months"].lt(0).any(), "Negative credit history"
 
     outcome_counts = cleaned["default"].value_counts()
-    issue_dates = cleaned["issue_date"].dropna()
+    issue_dates = cleaned.get("issue_date")
+    issue_dates = issue_dates.dropna() if issue_dates is not None else pd.Series(dtype="datetime64[ns]")
     missingness = {
         column: {
             "count": int(cleaned[column].isna().sum()),
