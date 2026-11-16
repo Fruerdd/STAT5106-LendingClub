@@ -32,7 +32,7 @@ ORIGINATION_COLUMNS = (
     "home_ownership",
     "annual_inc",
     "verification_status",
-    # "issue_d",
+    "issue_d",
     "loan_status",
     "purpose",
     "addr_state",
@@ -112,7 +112,13 @@ def construct_default(loan_status: pd.Series) -> pd.Series:
     """Map resolved outcomes to 0/1 and unresolved or unknown outcomes to missing."""
     normalized = loan_status.astype("string").str.strip().str.lower()
     return normalized.map(
-        {"fully paid": 0, "charged off": 1, "default": 1}
+        {
+            "fully paid": 0,
+            "charged off": 1,
+            "default": 1,
+            "does not meet the credit policy. status:fully paid": 0,
+            "does not meet the credit policy. status:charged off": 1
+        }
     ).astype("Int64")
 
 
@@ -343,8 +349,8 @@ def read_raw_data(input_path: Path) -> pd.DataFrame:
     """Read only allowlisted columns, inferring gzip compression from the filename."""
     if not input_path.is_file():
         raise FileNotFoundError(
-            f"Raw dataset not found: {input_path}. Place the frozen dataset at "
-            "data/raw/accepted_2007_to_2018Q4.csv.gz or pass --input."
+             f"Raw dataset not found: {input_path}. Place the uncompressed dataset at "
+            "data/raw/accepted_2007_to_2018Q4.csv or pass --input."
         )
     try:
         header = pd.read_csv(input_path, nrows=0, compression="infer")
@@ -387,7 +393,7 @@ def run_cleaning(input_path: Path, output_dir: Path) -> tuple[pd.DataFrame, dict
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", type=Path, default=RAW_DATA_PATH, help="Raw CSV or CSV.GZ file")
+    parser.add_argument("--input", type=Path, default=RAW_DATA_PATH, help="Raw CSV file")
     parser.add_argument(
         "--output-dir",
         type=Path,
