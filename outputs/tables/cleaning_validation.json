@@ -1,0 +1,9 @@
+{
+  "duplicate_nonmissing_ids": 0,
+  "leakage_fields_present": [],
+  "outcome_counts": {
+    "0": 1078739,
+    "1": 269360
+  },
+  "row_count": 1348099
+}
