@@ -1,0 +1,784 @@
+{
+  "input": "data/cleaned/clean_v1/lending_club_clean.csv.gz",
+  "max_rows": null,
+  "model_audits": [
+    {
+      "aic": 1234057.7021470733,
+      "converged": true,
+      "covariance_type": "HC3",
+      "default_count": 269174,
+      "default_rate": 0.19980240513479428,
+      "deviance": 1233969.7021470733,
+      "df_model": 43,
+      "diagnostic_sample_rows": 50000,
+      "fit_warnings": [],
+      "formula": "default ~ fico_per_10 + log2_annual_inc + log2_loan_to_annual_income + income_or_dti_missing + dti_per_10 + revol_util_per_10 + credit_history_years + emp_length_years + emp_length_years_was_missing + delinq_2yrs + inq_last_6mths + open_acc_per_5 + pub_rec + C(term_months, Treatment(reference='36')) + C(purpose_grouped, Treatment(reference='debt_consolidation')) + C(home_ownership_grouped, Treatment(reference='MORTGAGE')) + C(verification_status, Treatment(reference='Not Verified')) + C(application_type, Treatment(reference='Individual')) + C(issue_year, Treatment(reference='2015'))",
+      "hc3_chunk_size": 50000,
+      "iterations": 5,
+      "leverage_denominator_clipped_count": 0,
+      "leverage_max": 0.00546979195027981,
+      "leverage_min": 2.2599263217181995e-06,
+      "log_likelihood": -616984.8510735367,
+      "maximum_absolute_coefficient": 5.634190533636743,
+      "maximum_vif": 1.7654405089496807,
+      "maximum_vif_parameter": "log2_annual_inc",
+      "model": "A",
+      "nobs": 1347201,
+      "parameter_count": 44,
+      "parameters_with_vif_over_10": [],
+      "scenario": "primary",
+      "standardized_condition_number": 2.742157039949045,
+      "statsmodels_version": "0.15.0"
+    },
+    {
+      "aic": 1216405.626848629,
+      "converged": true,
+      "covariance_type": "HC3",
+      "default_count": 269174,
+      "default_rate": 0.19980240513479428,
+      "deviance": 1216305.626848629,
+      "df_model": 49,
+      "diagnostic_sample_rows": 50000,
+      "fit_warnings": [],
+      "formula": "default ~ fico_per_10 + log2_annual_inc + log2_loan_to_annual_income + income_or_dti_missing + dti_per_10 + revol_util_per_10 + credit_history_years + emp_length_years + emp_length_years_was_missing + delinq_2yrs + inq_last_6mths + open_acc_per_5 + pub_rec + C(term_months, Treatment(reference='36')) + C(purpose_grouped, Treatment(reference='debt_consolidation')) + C(home_ownership_grouped, Treatment(reference='MORTGAGE')) + C(verification_status, Treatment(reference='Not Verified')) + C(application_type, Treatment(reference='Individual')) + C(issue_year, Treatment(reference='2015')) + C(grade, Treatment(reference='A'))",
+      "hc3_chunk_size": 50000,
+      "iterations": 6,
+      "leverage_denominator_clipped_count": 0,
+      "leverage_max": 0.0056526214819897945,
+      "leverage_min": 3.352800130458078e-06,
+      "log_likelihood": -608152.8134243145,
+      "maximum_absolute_coefficient": 1.5928431301567687,
+      "maximum_vif": 2.755512670326168,
+      "maximum_vif_parameter": "C(grade, Treatment(reference='A'))[T.C]",
+      "model": "B",
+      "nobs": 1347201,
+      "parameter_count": 50,
+      "parameters_with_vif_over_10": [],
+      "scenario": "primary",
+      "standardized_condition_number": 4.222776623984505,
+      "statsmodels_version": "0.15.0"
+    },
+    {
+      "aic": 1218459.0718630773,
+      "converged": true,
+      "covariance_type": "HC3",
+      "default_count": 269174,
+      "default_rate": 0.19980240513479428,
+      "deviance": 1218369.0718630773,
+      "df_model": 44,
+      "diagnostic_sample_rows": 50000,
+      "fit_warnings": [],
+      "formula": "default ~ fico_per_10 + log2_annual_inc + log2_loan_to_annual_income + income_or_dti_missing + dti_per_10 + revol_util_per_10 + credit_history_years + emp_length_years + emp_length_years_was_missing + delinq_2yrs + inq_last_6mths + open_acc_per_5 + pub_rec + C(term_months, Treatment(reference='36')) + C(purpose_grouped, Treatment(reference='debt_consolidation')) + C(home_ownership_grouped, Treatment(reference='MORTGAGE')) + C(verification_status, Treatment(reference='Not Verified')) + C(application_type, Treatment(reference='Individual')) + C(issue_year, Treatment(reference='2015')) + int_rate_per_5",
+      "hc3_chunk_size": 50000,
+      "iterations": 5,
+      "leverage_denominator_clipped_count": 0,
+      "leverage_max": 0.005404494110097082,
+      "leverage_min": 3.0052935421883576e-06,
+      "log_likelihood": -609184.5359315387,
+      "maximum_absolute_coefficient": 1.8687613742065508,
+      "maximum_vif": 1.9745012398239492,
+      "maximum_vif_parameter": "int_rate_per_5",
+      "model": "C",
+      "nobs": 1347201,
+      "parameter_count": 45,
+      "parameters_with_vif_over_10": [],
+      "scenario": "primary",
+      "standardized_condition_number": 3.000860214291726,
+      "statsmodels_version": "0.15.0"
+    },
+    {
+      "aic": 537607.1021589489,
+      "converged": true,
+      "covariance_type": "HC3",
+      "default_count": 100462,
+      "default_rate": 0.1486379319528203,
+      "deviance": 537527.1021589489,
+      "df_model": 39,
+      "diagnostic_sample_rows": 50000,
+      "fit_warnings": [],
+      "formula": "default ~ fico_per_10 + log2_annual_inc + log2_loan_to_annual_income + dti_per_10 + revol_util_per_10 + credit_history_years + emp_length_years + emp_length_years_was_missing + delinq_2yrs + inq_last_6mths + open_acc_per_5 + pub_rec + C(term_months, Treatment(reference='36')) + C(purpose_grouped, Treatment(reference='debt_consolidation')) + C(home_ownership_grouped, Treatment(reference='MORTGAGE')) + C(verification_status, Treatment(reference='Not Verified')) + C(application_type, Treatment(reference='Individual')) + C(issue_year, Treatment(reference='2015'))",
+      "hc3_chunk_size": 50000,
+      "iterations": 6,
+      "leverage_denominator_clipped_count": 0,
+      "leverage_max": 0.009661225382719282,
+      "leverage_min": 5.378796372304107e-06,
+      "log_likelihood": -268763.55107947445,
+      "maximum_absolute_coefficient": 7.181794238241422,
+      "maximum_vif": 1.7679587982304452,
+      "maximum_vif_parameter": "log2_annual_inc",
+      "model": "A",
+      "nobs": 675884,
+      "parameter_count": 40,
+      "parameters_with_vif_over_10": [],
+      "scenario": "mature",
+      "standardized_condition_number": 2.7740864436917168,
+      "statsmodels_version": "0.15.0"
+    },
+    {
+      "aic": 1238251.8600448617,
+      "converged": true,
+      "covariance_type": "HC3",
+      "default_count": 269174,
+      "default_rate": 0.19980240513479428,
+      "deviance": 1238163.8600448617,
+      "df_model": 43,
+      "diagnostic_sample_rows": 50000,
+      "fit_warnings": [],
+      "formula": "default ~ fico_per_10 + log2_annual_inc + log2_loan_to_annual_income + income_or_dti_missing + dti_per_10 + revol_util_per_10 + credit_history_years + emp_length_years + emp_length_years_was_missing + delinq_2yrs + inq_last_6mths + open_acc_per_5 + pub_rec + C(term_months, Treatment(reference='36')) + C(purpose_grouped, Treatment(reference='debt_consolidation')) + C(home_ownership_grouped, Treatment(reference='MORTGAGE')) + C(verification_status, Treatment(reference='Not Verified')) + C(application_type, Treatment(reference='Individual')) + C(issue_year, Treatment(reference='2015'))",
+      "hc3_chunk_size": 50000,
+      "iterations": 6,
+      "leverage_denominator_clipped_count": 0,
+      "leverage_max": 0.025379763406404663,
+      "leverage_min": 4.952929381378998e-11,
+      "log_likelihood": -619081.9300224308,
+      "maximum_absolute_coefficient": 6.164137660040797,
+      "maximum_vif": 1.6906956797583532,
+      "maximum_vif_parameter": "log2_annual_inc",
+      "model": "A",
+      "nobs": 1347201,
+      "parameter_count": 44,
+      "parameters_with_vif_over_10": [],
+      "scenario": "unwinsorized",
+      "standardized_condition_number": 2.622229026472983,
+      "statsmodels_version": "0.15.0"
+    },
+    {
+      "aic": 1148300.7671169112,
+      "converged": true,
+      "covariance_type": "HC3",
+      "default_count": 248038,
+      "default_rate": 0.19550532749219282,
+      "deviance": 1148216.7671169112,
+      "df_model": 41,
+      "diagnostic_sample_rows": 50000,
+      "fit_warnings": [],
+      "formula": "default ~ fico_per_10 + log2_annual_inc + log2_loan_to_annual_income + dti_per_10 + revol_util_per_10 + credit_history_years + emp_length_years + delinq_2yrs + inq_last_6mths + open_acc_per_5 + pub_rec + C(term_months, Treatment(reference='36')) + C(purpose_grouped, Treatment(reference='debt_consolidation')) + C(home_ownership_grouped, Treatment(reference='MORTGAGE')) + C(verification_status, Treatment(reference='Not Verified')) + C(application_type, Treatment(reference='Individual')) + C(issue_year, Treatment(reference='2015'))",
+      "hc3_chunk_size": 50000,
+      "iterations": 5,
+      "leverage_denominator_clipped_count": 0,
+      "leverage_max": 0.005678030995092607,
+      "leverage_min": 2.3340169954284766e-06,
+      "log_likelihood": -574108.3835584556,
+      "maximum_absolute_coefficient": 5.78290722561134,
+      "maximum_vif": 1.7089641130750863,
+      "maximum_vif_parameter": "revol_util_per_10",
+      "model": "A",
+      "nobs": 1268702,
+      "parameter_count": 42,
+      "parameters_with_vif_over_10": [],
+      "scenario": "employment_complete_case",
+      "standardized_condition_number": 2.722400543726554,
+      "statsmodels_version": "0.15.0"
+    }
+  ],
+  "preparation_audits": [
+    {
+      "annual_income_nonpositive_or_missing": 360,
+      "category_counts": {
+        "application_type": {
+          "Individual": 1321440,
+          "Joint App": 25761
+        },
+        "grade": {
+          "A": 235103,
+          "B": 392916,
+          "C": 382053,
+          "D": 201450,
+          "E": 94100,
+          "F": 32271,
+          "G": 9308
+        },
+        "home_ownership_grouped": {
+          "MORTGAGE": 666409,
+          "OTHER_RARE": 514,
+          "OWN": 144904,
+          "RENT": 535374
+        },
+        "issue_year": {
+          "2007": 571,
+          "2008": 2381,
+          "2009": 5265,
+          "2010": 12516,
+          "2011": 21712,
+          "2012": 53320,
+          "2013": 134726,
+          "2014": 222988,
+          "2015": 375392,
+          "2016": 292916,
+          "2017": 169170,
+          "2018": 56244
+        },
+        "purpose_grouped": {
+          "OTHER_RARE": 1355,
+          "car": 14632,
+          "credit_card": 295536,
+          "debt_consolidation": 781074,
+          "home_improvement": 87607,
+          "house": 7290,
+          "major_purchase": 29506,
+          "medical": 15587,
+          "moving": 9507,
+          "other": 78129,
+          "small_business": 15565,
+          "vacation": 9065,
+          "wedding": 2348
+        },
+        "term_months": {
+          "36": 1022479,
+          "60": 324722
+        },
+        "verification_status": {
+          "Not Verified": 407288,
+          "Source Verified": 521250,
+          "Verified": 418663
+        }
+      },
+      "default_count": 269174,
+      "default_rate": 0.19980240513479428,
+      "dti_median": 17.61,
+      "dti_missing_count": 375,
+      "employment_median": 6.0,
+      "employment_missing_count": 78499,
+      "employment_rows_excluded": 0,
+      "final_rows": 1347201,
+      "income_or_dti_missing_count": 375,
+      "income_or_dti_missing_included": true,
+      "income_or_dti_missing_level_counts": {
+        "0": 1346826,
+        "1": 375
+      },
+      "income_transform_medians": {
+        "log2_annual_inc": 15.988152097690541,
+        "log2_loan_to_annual_income": 0.2630344058337938
+      },
+      "input_rows": 1348099,
+      "low_missing_rows_excluded": 898,
+      "maturity_cutoff": "2018-12",
+      "original_home_ownership_counts": {
+        "ANY": 285,
+        "MORTGAGE": 666409,
+        "NONE": 49,
+        "OTHER": 180,
+        "OWN": 144904,
+        "RENT": 535374
+      },
+      "original_purpose_counts": {
+        "car": 14632,
+        "credit_card": 295536,
+        "debt_consolidation": 781074,
+        "educational": 420,
+        "home_improvement": 87607,
+        "house": 7290,
+        "major_purchase": 29506,
+        "medical": 15587,
+        "moving": 9507,
+        "other": 78129,
+        "renewable_energy": 935,
+        "small_business": 15565,
+        "vacation": 9065,
+        "wedding": 2348
+      },
+      "rare_home_ownership_levels": [
+        "ANY",
+        "NONE",
+        "OTHER"
+      ],
+      "rare_min_count": 1000,
+      "rare_purpose_levels": [
+        "educational",
+        "renewable_energy"
+      ],
+      "rows_after_maturity_filter": 1348099,
+      "scenario": "primary",
+      "winsor_bounds": {
+        "credit_history_years": {
+          "lower": 3.4166666666666665,
+          "upper": 43.25
+        },
+        "delinq_2yrs": {
+          "lower": 0.0,
+          "upper": 5.0
+        },
+        "dti_per_10": {
+          "lower": 0.10300000000000001,
+          "upper": 4.005
+        },
+        "inq_last_6mths": {
+          "lower": 0.0,
+          "upper": 5.0
+        },
+        "log2_annual_inc": {
+          "lower": 13.872674880270605,
+          "upper": 18.310080192577903
+        },
+        "log2_loan_to_annual_income": {
+          "lower": 0.02856915219677092,
+          "upper": 0.6571122864769915
+        },
+        "open_acc_per_5": {
+          "lower": 0.6,
+          "upper": 6.4
+        },
+        "pub_rec": {
+          "lower": 0.0,
+          "upper": 3.0
+        },
+        "revol_util_per_10": {
+          "lower": 0.0,
+          "upper": 9.95
+        }
+      },
+      "winsor_quantiles": {
+        "lower": 0.005,
+        "upper": 0.995
+      },
+      "winsorized": true
+    },
+    {
+      "annual_income_nonpositive_or_missing": 2,
+      "category_counts": {
+        "application_type": {
+          "Individual": 675645,
+          "Joint App": 239
+        },
+        "grade": {
+          "A": 144175,
+          "B": 220110,
+          "C": 180090,
+          "D": 87032,
+          "E": 32095,
+          "F": 10330,
+          "G": 2052
+        },
+        "home_ownership_grouped": {
+          "MORTGAGE": 321861,
+          "OTHER_RARE": 228,
+          "OWN": 66950,
+          "RENT": 286845
+        },
+        "issue_year": {
+          "2007": 571,
+          "2008": 2381,
+          "2009": 5265,
+          "2010": 12516,
+          "2011": 21712,
+          "2012": 53320,
+          "2013": 134726,
+          "2014": 162493,
+          "2015": 282900
+        },
+        "purpose_grouped": {
+          "OTHER_RARE": 935,
+          "car": 7838,
+          "credit_card": 159359,
+          "debt_consolidation": 386863,
+          "home_improvement": 39258,
+          "house": 3032,
+          "major_purchase": 14175,
+          "medical": 7289,
+          "moving": 4856,
+          "other": 36711,
+          "small_business": 8788,
+          "vacation": 4436,
+          "wedding": 2344
+        },
+        "term_months": {
+          "36": 620636,
+          "60": 55248
+        },
+        "verification_status": {
+          "Not Verified": 219955,
+          "Source Verified": 232097,
+          "Verified": 223832
+        }
+      },
+      "default_count": 100462,
+      "default_rate": 0.1486379319528203,
+      "dti_median": 17.05,
+      "dti_missing_count": 2,
+      "employment_median": 6.0,
+      "employment_missing_count": 37590,
+      "employment_rows_excluded": 0,
+      "final_rows": 675884,
+      "income_or_dti_missing_count": 2,
+      "income_or_dti_missing_included": false,
+      "income_or_dti_missing_level_counts": {
+        "0": 675882,
+        "1": 2
+      },
+      "income_transform_medians": {
+        "log2_annual_inc": 15.896521622224974,
+        "log2_loan_to_annual_income": 0.2479275134435855
+      },
+      "input_rows": 1348099,
+      "low_missing_rows_excluded": 418,
+      "maturity_cutoff": "2018-12",
+      "original_home_ownership_counts": {
+        "ANY": 2,
+        "MORTGAGE": 321861,
+        "NONE": 46,
+        "OTHER": 180,
+        "OWN": 66950,
+        "RENT": 286845
+      },
+      "original_purpose_counts": {
+        "car": 7838,
+        "credit_card": 159359,
+        "debt_consolidation": 386863,
+        "educational": 420,
+        "home_improvement": 39258,
+        "house": 3032,
+        "major_purchase": 14175,
+        "medical": 7289,
+        "moving": 4856,
+        "other": 36711,
+        "renewable_energy": 515,
+        "small_business": 8788,
+        "vacation": 4436,
+        "wedding": 2344
+      },
+      "rare_home_ownership_levels": [
+        "ANY",
+        "NONE",
+        "OTHER"
+      ],
+      "rare_min_count": 1000,
+      "rare_purpose_levels": [
+        "educational",
+        "renewable_energy"
+      ],
+      "rows_after_maturity_filter": 676302,
+      "scenario": "mature",
+      "winsor_bounds": {
+        "credit_history_years": {
+          "lower": 3.5,
+          "upper": 42.916666666666664
+        },
+        "delinq_2yrs": {
+          "lower": 0.0,
+          "upper": 5.0
+        },
+        "dti_per_10": {
+          "lower": 0.10400000000000001,
+          "upper": 3.8270000000000004
+        },
+        "inq_last_6mths": {
+          "lower": 0.0,
+          "upper": 5.0
+        },
+        "log2_annual_inc": {
+          "lower": 13.853309555403674,
+          "upper": 18.218449717112335
+        },
+        "log2_loan_to_annual_income": {
+          "lower": 0.02891379012930561,
+          "upper": 0.5836238218188684
+        },
+        "open_acc_per_5": {
+          "lower": 0.6,
+          "upper": 6.2
+        },
+        "pub_rec": {
+          "lower": 0.0,
+          "upper": 3.0
+        },
+        "revol_util_per_10": {
+          "lower": 0.02,
+          "upper": 9.95
+        }
+      },
+      "winsor_quantiles": {
+        "lower": 0.005,
+        "upper": 0.995
+      },
+      "winsorized": true
+    },
+    {
+      "annual_income_nonpositive_or_missing": 360,
+      "category_counts": {
+        "application_type": {
+          "Individual": 1321440,
+          "Joint App": 25761
+        },
+        "grade": {
+          "A": 235103,
+          "B": 392916,
+          "C": 382053,
+          "D": 201450,
+          "E": 94100,
+          "F": 32271,
+          "G": 9308
+        },
+        "home_ownership_grouped": {
+          "MORTGAGE": 666409,
+          "OTHER_RARE": 514,
+          "OWN": 144904,
+          "RENT": 535374
+        },
+        "issue_year": {
+          "2007": 571,
+          "2008": 2381,
+          "2009": 5265,
+          "2010": 12516,
+          "2011": 21712,
+          "2012": 53320,
+          "2013": 134726,
+          "2014": 222988,
+          "2015": 375392,
+          "2016": 292916,
+          "2017": 169170,
+          "2018": 56244
+        },
+        "purpose_grouped": {
+          "OTHER_RARE": 1355,
+          "car": 14632,
+          "credit_card": 295536,
+          "debt_consolidation": 781074,
+          "home_improvement": 87607,
+          "house": 7290,
+          "major_purchase": 29506,
+          "medical": 15587,
+          "moving": 9507,
+          "other": 78129,
+          "small_business": 15565,
+          "vacation": 9065,
+          "wedding": 2348
+        },
+        "term_months": {
+          "36": 1022479,
+          "60": 324722
+        },
+        "verification_status": {
+          "Not Verified": 407288,
+          "Source Verified": 521250,
+          "Verified": 418663
+        }
+      },
+      "default_count": 269174,
+      "default_rate": 0.19980240513479428,
+      "dti_median": 17.61,
+      "dti_missing_count": 375,
+      "employment_median": 6.0,
+      "employment_missing_count": 78499,
+      "employment_rows_excluded": 0,
+      "final_rows": 1347201,
+      "income_or_dti_missing_count": 375,
+      "income_or_dti_missing_included": true,
+      "income_or_dti_missing_level_counts": {
+        "0": 1346826,
+        "1": 375
+      },
+      "income_transform_medians": {
+        "log2_annual_inc": 15.988152097690541,
+        "log2_loan_to_annual_income": 0.2630344058337938
+      },
+      "input_rows": 1348099,
+      "low_missing_rows_excluded": 898,
+      "maturity_cutoff": "2018-12",
+      "original_home_ownership_counts": {
+        "ANY": 285,
+        "MORTGAGE": 666409,
+        "NONE": 49,
+        "OTHER": 180,
+        "OWN": 144904,
+        "RENT": 535374
+      },
+      "original_purpose_counts": {
+        "car": 14632,
+        "credit_card": 295536,
+        "debt_consolidation": 781074,
+        "educational": 420,
+        "home_improvement": 87607,
+        "house": 7290,
+        "major_purchase": 29506,
+        "medical": 15587,
+        "moving": 9507,
+        "other": 78129,
+        "renewable_energy": 935,
+        "small_business": 15565,
+        "vacation": 9065,
+        "wedding": 2348
+      },
+      "rare_home_ownership_levels": [
+        "ANY",
+        "NONE",
+        "OTHER"
+      ],
+      "rare_min_count": 1000,
+      "rare_purpose_levels": [
+        "educational",
+        "renewable_energy"
+      ],
+      "rows_after_maturity_filter": 1348099,
+      "scenario": "unwinsorized",
+      "winsor_bounds": {},
+      "winsor_quantiles": {
+        "lower": 0.005,
+        "upper": 0.995
+      },
+      "winsorized": false
+    },
+    {
+      "annual_income_nonpositive_or_missing": 14,
+      "category_counts": {
+        "application_type": {
+          "Individual": 1246679,
+          "Joint App": 22023
+        },
+        "grade": {
+          "A": 222421,
+          "B": 370193,
+          "C": 359336,
+          "D": 188552,
+          "E": 88732,
+          "F": 30606,
+          "G": 8862
+        },
+        "home_ownership_grouped": {
+          "MORTGAGE": 630124,
+          "OTHER_RARE": 490,
+          "OWN": 129272,
+          "RENT": 508816
+        },
+        "issue_year": {
+          "2007": 571,
+          "2008": 2381,
+          "2009": 5265,
+          "2010": 12164,
+          "2011": 20955,
+          "2012": 51398,
+          "2013": 128764,
+          "2014": 211440,
+          "2015": 353337,
+          "2016": 274050,
+          "2017": 157056,
+          "2018": 51321
+        },
+        "purpose_grouped": {
+          "OTHER_RARE": 1289,
+          "car": 13827,
+          "credit_card": 277665,
+          "debt_consolidation": 738331,
+          "home_improvement": 81361,
+          "house": 6859,
+          "major_purchase": 27852,
+          "medical": 14285,
+          "moving": 8909,
+          "other": 72510,
+          "small_business": 15126,
+          "vacation": 8372,
+          "wedding": 2316
+        },
+        "term_months": {
+          "36": 956295,
+          "60": 312407
+        },
+        "verification_status": {
+          "Not Verified": 391485,
+          "Source Verified": 506106,
+          "Verified": 371111
+        }
+      },
+      "default_count": 248038,
+      "default_rate": 0.19550532749219282,
+      "dti_median": 17.61,
+      "dti_missing_count": 375,
+      "employment_median": null,
+      "employment_missing_count": 78499,
+      "employment_rows_excluded": 78499,
+      "final_rows": 1268702,
+      "income_or_dti_missing_count": 19,
+      "income_or_dti_missing_included": false,
+      "income_or_dti_missing_level_counts": {
+        "0": 1268683,
+        "1": 19
+      },
+      "income_transform_medians": {
+        "log2_annual_inc": 15.988152097690541,
+        "log2_loan_to_annual_income": 0.2590213433271706
+      },
+      "input_rows": 1348099,
+      "low_missing_rows_excluded": 898,
+      "maturity_cutoff": "2018-12",
+      "original_home_ownership_counts": {
+        "ANY": 266,
+        "MORTGAGE": 630124,
+        "NONE": 47,
+        "OTHER": 177,
+        "OWN": 129272,
+        "RENT": 508816
+      },
+      "original_purpose_counts": {
+        "car": 13827,
+        "credit_card": 277665,
+        "debt_consolidation": 738331,
+        "educational": 411,
+        "home_improvement": 81361,
+        "house": 6859,
+        "major_purchase": 27852,
+        "medical": 14285,
+        "moving": 8909,
+        "other": 72510,
+        "renewable_energy": 878,
+        "small_business": 15126,
+        "vacation": 8372,
+        "wedding": 2316
+      },
+      "rare_home_ownership_levels": [
+        "ANY",
+        "NONE",
+        "OTHER"
+      ],
+      "rare_min_count": 1000,
+      "rare_purpose_levels": [
+        "educational",
+        "renewable_energy"
+      ],
+      "rows_after_maturity_filter": 1348099,
+      "scenario": "employment_complete_case",
+      "winsor_bounds": {
+        "credit_history_years": {
+          "lower": 3.4166666666666665,
+          "upper": 41.25
+        },
+        "delinq_2yrs": {
+          "lower": 0.0,
+          "upper": 5.0
+        },
+        "dti_per_10": {
+          "lower": 0.10300000000000001,
+          "upper": 3.974
+        },
+        "inq_last_6mths": {
+          "lower": 0.0,
+          "upper": 5.0
+        },
+        "log2_annual_inc": {
+          "lower": 14.1357092861044,
+          "upper": 18.3321064989079
+        },
+        "log2_loan_to_annual_income": {
+          "lower": 0.028412425836359563,
+          "upper": 0.6214883767462701
+        },
+        "open_acc_per_5": {
+          "lower": 0.6,
+          "upper": 6.4
+        },
+        "pub_rec": {
+          "lower": 0.0,
+          "upper": 3.0
+        },
+        "revol_util_per_10": {
+          "lower": 0.0,
+          "upper": 9.95
+        }
+      },
+      "winsor_quantiles": {
+        "lower": 0.005,
+        "upper": 0.995
+      },
+      "winsorized": true
+    }
+  ]
+}

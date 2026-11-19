@@ -1,0 +1,25 @@
+feature_family,source_columns,engineered_feature,type,transformation,reporting_unit_or_reference,primary_missing_strategy,model_a,model_b,model_c,downstream_note
+outcome,default,default,binary,none,0=Fully Paid; 1=Charged Off or Default,not applicable,yes,yes,yes,Prediction target; never transform from post-outcome fields
+borrower_credit,fico_score,fico_per_10,continuous,fico_score / 10,10 FICO points,complete case,yes,yes,yes,Do not also use fico_range_low or fico_range_high
+borrower_credit,annual_inc,log2_annual_inc,continuous,log2(annual_inc) for annual_inc > 0,income doubling,transformed median plus income_or_dti_missing,yes,yes,yes,Winsorize in inference cohort; prediction median and caps use training only
+loan_burden,loan_amnt;annual_inc,log2_loan_to_annual_income,continuous,log2(1 + loan_amnt / annual_inc) for annual_inc > 0,doubling of 1 + ratio,transformed median plus income_or_dti_missing,yes,yes,yes,Winsorize in inference cohort; omit raw loan_amnt; prediction fits on training only
+missingness,annual_inc;dti,income_or_dti_missing,binary,1 when annual_inc is missing or <= 0 or dti is missing,0 as reference,no missing after derivation,yes,yes,yes,Frozen full-cohort union has 380 rows; omit within a scenario if either level has < 20 rows
+borrower_credit,dti,dti_per_10,continuous,dti / 10,10 DTI points,median plus income_or_dti_missing,yes,yes,yes,Primary winsorization uses inference cohort; prediction median and caps use training only
+borrower_credit,revol_util,revol_util_per_10,continuous,revol_util / 10,10 percentage points,complete case,yes,yes,yes,Primary winsorization uses inference cohort; prediction uses training only
+borrower_credit,credit_history_months,credit_history_years,continuous,credit_history_months / 12,1 year,complete case,yes,yes,yes,Winsorize in inference cohort; omit both earliest credit-line date fields
+borrower_credit,emp_length_years,emp_length_years,continuous,none,1 year,median plus emp_length_years_was_missing,yes,yes,yes,Also run complete-case employment sensitivity
+missingness,emp_length_years_was_missing,emp_length_years_was_missing,binary,none,0 as reference,no missing,yes,yes,yes,Preserve original missingness signal
+borrower_credit,delinq_2yrs,delinq_2yrs,continuous,none,1 delinquency,complete case,yes,yes,yes,Primary winsorization uses inference cohort; prediction uses training only
+borrower_credit,inq_last_6mths,inq_last_6mths,continuous,none,1 inquiry,complete case,yes,yes,yes,Primary winsorization uses inference cohort; prediction uses training only
+borrower_credit,open_acc,open_acc_per_5,continuous,open_acc / 5,5 open accounts,complete case,yes,yes,yes,Primary winsorization uses inference cohort; prediction uses training only
+borrower_credit,pub_rec,pub_rec,continuous,none,1 public record,complete case,yes,yes,yes,Primary winsorization uses inference cohort; prediction uses training only
+loan_terms,term_months,term_months,categorical,treat as category,36 months as reference,no missing,yes,yes,yes,Expected levels are 36 and 60
+application,purpose,purpose_grouped,categorical,map fitting-cohort levels with count < 1000 to OTHER_RARE,debt_consolidation as reference,no missing,yes,yes,yes,Fit rare map on temporal training data for prediction
+application,home_ownership,home_ownership_grouped,categorical,map fitting-cohort levels with count < 1000 to OTHER_RARE,MORTGAGE as reference,no missing,yes,yes,yes,Fit rare map on temporal training data for prediction
+application,verification_status,verification_status,categorical,none,Not Verified as reference,no missing,yes,yes,yes,Use origination-time value only
+application,application_type,application_type,categorical,none,Individual as reference,no missing,yes,yes,yes,Joint App remains separate
+time_control,issue_date,issue_year,categorical,calendar year extracted from issue_date,2015 as reference,complete case,yes,yes,yes,Control only; Pavel owns temporal splitting
+lender_proxy,grade,grade,categorical,none,Grade A as reference,no missing,no,yes,no,Never combine with sub_grade or int_rate in a primary model
+lender_proxy,int_rate,int_rate_per_5,continuous,int_rate / 5,5 percentage points,complete case,no,no,yes,Never combine with grade or sub_grade in a primary model
+sensitivity,mths_since_last_delinq,has_last_delinq_record,binary,1 when value is observed,0 as reference,no missing,no,no,no,Sensitivity model only because missingness is structural
+sensitivity,mths_since_last_record,has_last_public_record_date,binary,1 when value is observed,0 as reference,no missing,no,no,no,Sensitivity model only because missingness is structural

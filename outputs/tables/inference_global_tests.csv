@@ -1,0 +1,120 @@
+scenario,model,term,df,wald_chi2,p_value,q_value
+primary,A,Intercept,1,3852.2437806853504,0.0,
+primary,A,"C(term_months, Treatment(reference='36'))",1,26799.771114083473,0.0,0.0
+primary,A,"C(purpose_grouped, Treatment(reference='debt_consolidation'))",12,4344.970108036139,0.0,0.0
+primary,A,"C(home_ownership_grouped, Treatment(reference='MORTGAGE'))",3,5333.033765971004,0.0,0.0
+primary,A,"C(verification_status, Treatment(reference='Not Verified'))",2,1196.4494518098804,1.5642371694724667e-260,2.9720506219976867e-260
+primary,A,"C(application_type, Treatment(reference='Individual'))",1,226.97511465745484,2.722941157473293e-51,3.695420142285183e-51
+primary,A,"C(issue_year, Treatment(reference='2015'))",11,8441.450712333773,0.0,0.0
+primary,A,fico_per_10,1,10005.034290016181,0.0,0.0
+primary,A,log2_annual_inc,1,440.09075101023825,1.0344161803205984e-97,1.6378256188409477e-97
+primary,A,log2_loan_to_annual_income,1,4757.867974269032,0.0,0.0
+primary,A,income_or_dti_missing,1,0.12774710409349485,0.7207794507084089,0.7207794507084089
+primary,A,dti_per_10,1,3514.861633294941,0.0,0.0
+primary,A,revol_util_per_10,1,214.95806742439032,1.1381893885768962e-48,1.4417065588640686e-48
+primary,A,credit_history_years,1,639.495497695885,4.3019157859457055e-141,7.430581812088036e-141
+primary,A,emp_length_years,1,3.8147901525688264,0.05080196839513989,0.053624299972647664
+primary,A,emp_length_years_was_missing,1,1962.0863313899708,0.0,0.0
+primary,A,delinq_2yrs,1,122.82000528759134,1.5269100066030274e-28,1.813205632841095e-28
+primary,A,inq_last_6mths,1,5296.506300968458,0.0,0.0
+primary,A,open_acc_per_5,1,241.32640303831437,2.020662172114799e-54,2.953275482321629e-54
+primary,A,pub_rec,1,19.31173925912593,1.1102166530751133e-05,1.2408303769663031e-05
+primary,B,Intercept,1,166.83934788293453,3.6267830217467127e-38,
+primary,B,"C(term_months, Treatment(reference='36'))",1,8412.491070767794,0.0,0.0
+primary,B,"C(purpose_grouped, Treatment(reference='debt_consolidation'))",12,1101.9512225988656,2.21189677198064e-228,4.42379354396128e-228
+primary,B,"C(home_ownership_grouped, Treatment(reference='MORTGAGE'))",3,4455.793535085239,0.0,0.0
+primary,B,"C(verification_status, Treatment(reference='Not Verified'))",2,433.69208130611423,6.682840898699085e-95,1.2150619815816516e-94
+primary,B,"C(application_type, Treatment(reference='Individual'))",1,120.49486419254359,4.9294233214695965e-28,6.572564428626128e-28
+primary,B,"C(issue_year, Treatment(reference='2015'))",11,7505.837808199881,0.0,0.0
+primary,B,"C(grade, Treatment(reference='A'))",6,16552.061634897967,0.0,0.0
+primary,B,fico_per_10,1,2399.333751703412,0.0,0.0
+primary,B,log2_annual_inc,1,196.3151217047955,1.3304280925669224e-44,2.0468124501029576e-44
+primary,B,log2_loan_to_annual_income,1,2841.8951209354896,0.0,0.0
+primary,B,income_or_dti_missing,1,3.1368020822790066,0.0765437514593055,0.0765437514593055
+primary,B,dti_per_10,1,1859.4239779213635,0.0,0.0
+primary,B,revol_util_per_10,1,11.442513598826332,0.0007178262114303735,0.0007975846793670816
+primary,B,credit_history_years,1,158.2948149965642,2.668227407187451e-36,3.811753438839216e-36
+primary,B,emp_length_years,1,8.139406534491236,0.004331345760826494,0.004559311327185784
+primary,B,emp_length_years_was_missing,1,1947.1935495567268,0.0,0.0
+primary,B,delinq_2yrs,1,101.74102141467847,6.327635119580168e-24,7.909543899475209e-24
+primary,B,inq_last_6mths,1,1601.5477015338677,0.0,0.0
+primary,B,open_acc_per_5,1,364.841001998485,2.48593033377208e-81,4.143217222953467e-81
+primary,B,pub_rec,1,20.40165874967407,6.277535967431915e-06,7.3853364322728414e-06
+primary,C,Intercept,1,383.61399158636993,2.0330504239121807e-85,
+primary,C,"C(term_months, Treatment(reference='36'))",1,8890.162124795987,0.0,0.0
+primary,C,"C(purpose_grouped, Treatment(reference='debt_consolidation'))",12,1249.7853860320715,3.280053475250023e-260,6.560106950500045e-260
+primary,C,"C(home_ownership_grouped, Treatment(reference='MORTGAGE'))",3,4459.584116616701,0.0,0.0
+primary,C,"C(verification_status, Treatment(reference='Not Verified'))",2,439.62905169761274,3.4337160753859982e-96,6.243120137065451e-96
+primary,C,"C(application_type, Treatment(reference='Individual'))",1,132.68335454527406,1.0604588251264116e-30,1.4139451001685489e-30
+primary,C,"C(issue_year, Treatment(reference='2015'))",11,8097.33626532519,0.0,0.0
+primary,C,fico_per_10,1,3431.8535426540316,0.0,0.0
+primary,C,log2_annual_inc,1,267.1963624936997,4.6340577462661123e-60,7.129319609640172e-60
+primary,C,log2_loan_to_annual_income,1,2758.372524208237,0.0,0.0
+primary,C,income_or_dti_missing,1,2.6965428431877307,0.10056609981596974,0.10056609981596974
+primary,C,dti_per_10,1,1981.3875919661577,0.0,0.0
+primary,C,revol_util_per_10,1,26.606877767287052,2.4935450001659794e-07,2.9335823531364463e-07
+primary,C,credit_history_years,1,183.36800305205622,8.914261405117507e-42,1.2734659150167867e-41
+primary,C,emp_length_years,1,7.107079386113474,0.007678010514810028,0.008082116331378977
+primary,C,emp_length_years_was_missing,1,1998.7244291944742,0.0,0.0
+primary,C,delinq_2yrs,1,110.48814655626582,7.660207816346357e-26,9.575259770432945e-26
+primary,C,inq_last_6mths,1,1722.2296188458622,0.0,0.0
+primary,C,open_acc_per_5,1,344.94572358659667,5.343213137284917e-77,8.905355228808195e-77
+primary,C,pub_rec,1,23.08996972530064,1.5459506295393974e-06,1.7177229217104416e-06
+primary,C,int_rate_per_5,1,15392.698060358121,0.0,0.0
+mature,A,Intercept,1,2585.715294959191,0.0,
+mature,A,"C(term_months, Treatment(reference='36'))",1,3304.3226711303237,0.0,0.0
+mature,A,"C(purpose_grouped, Treatment(reference='debt_consolidation'))",12,2089.6954277018735,0.0,0.0
+mature,A,"C(home_ownership_grouped, Treatment(reference='MORTGAGE'))",3,1003.4320442547431,3.240532011826964e-217,8.332796601840764e-217
+mature,A,"C(verification_status, Treatment(reference='Not Verified'))",2,209.99933661489942,2.507399023559963e-46,3.761098535339945e-46
+mature,A,"C(application_type, Treatment(reference='Individual'))",1,0.8760440858664664,0.34928746645916,0.34928746645916
+mature,A,"C(issue_year, Treatment(reference='2015'))",8,483.6409963307267,2.2720557302235383e-99,4.544111460447077e-99
+mature,A,fico_per_10,1,4524.432253079211,0.0,0.0
+mature,A,log2_annual_inc,1,446.4003535532071,4.380313263362525e-99,7.884563874052544e-99
+mature,A,log2_loan_to_annual_income,1,1407.8392582595948,4.1585789809130683e-308,1.4970884331287045e-307
+mature,A,dti_per_10,1,1041.5602931964636,1.6624091949441447e-228,4.9872275848324345e-228
+mature,A,revol_util_per_10,1,41.09099597178056,1.4530418135494233e-10,1.868196617420687e-10
+mature,A,credit_history_years,1,319.65428967471087,1.7226797917636712e-71,2.818930568340553e-71
+mature,A,emp_length_years,1,6.5614703142891715,0.010421022755125537,0.01172365059951623
+mature,A,emp_length_years_was_missing,1,547.0983339278445,5.38546743961713e-121,1.2117301739138543e-120
+mature,A,delinq_2yrs,1,12.573930654640165,0.000391164998972284,0.0004693979987667408
+mature,A,inq_last_6mths,1,2608.1915320346707,0.0,0.0
+mature,A,open_acc_per_5,1,149.60012087859997,2.1201400222890206e-34,2.9355784924001823e-34
+mature,A,pub_rec,1,4.549326121766993,0.03293170492016309,0.03486886403311386
+unwinsorized,A,Intercept,1,4337.053522481324,0.0,
+unwinsorized,A,"C(term_months, Treatment(reference='36'))",1,25521.723130808576,0.0,0.0
+unwinsorized,A,"C(purpose_grouped, Treatment(reference='debt_consolidation'))",12,3963.1495072003595,0.0,0.0
+unwinsorized,A,"C(home_ownership_grouped, Treatment(reference='MORTGAGE'))",3,5383.003922931453,0.0,0.0
+unwinsorized,A,"C(verification_status, Treatment(reference='Not Verified'))",2,1407.3354588222642,2.517607498123396e-306,5.3149491627049474e-306
+unwinsorized,A,"C(application_type, Treatment(reference='Individual'))",1,285.80387485897234,4.082034210876243e-64,5.539903571903473e-64
+unwinsorized,A,"C(issue_year, Treatment(reference='2015'))",11,8614.75321638993,0.0,0.0
+unwinsorized,A,fico_per_10,1,9481.765221944675,0.0,0.0
+unwinsorized,A,log2_annual_inc,1,677.7587010442039,2.0527313454537223e-149,3.900189556362073e-149
+unwinsorized,A,log2_loan_to_annual_income,1,1719.4444366446123,0.0,0.0
+unwinsorized,A,income_or_dti_missing,1,0.739047480201159,0.38996617509950127,0.38996617509950127
+unwinsorized,A,dti_per_10,1,282.1136045988803,2.600226325898477e-63,3.293620012804737e-63
+unwinsorized,A,revol_util_per_10,1,377.4351577585537,4.501659239230045e-84,6.579348118874681e-84
+unwinsorized,A,credit_history_years,1,546.171693330399,8.566582881973707e-121,1.4796824977954584e-120
+unwinsorized,A,emp_length_years,1,0.779246938592682,0.3773715517063707,0.38996617509950127
+unwinsorized,A,emp_length_years_was_missing,1,1819.3308483336561,0.0,0.0
+unwinsorized,A,delinq_2yrs,1,90.90804581410234,1.5050642334695933e-21,1.787263777245142e-21
+unwinsorized,A,inq_last_6mths,1,4973.442790359091,0.0,0.0
+unwinsorized,A,open_acc_per_5,1,451.9404807428975,2.7278172771597463e-100,4.3190440221695986e-100
+unwinsorized,A,pub_rec,1,12.17551700548349,0.00048420876869641335,0.000541174506190109
+employment_complete_case,A,Intercept,1,3697.649705275869,0.0,
+employment_complete_case,A,"C(term_months, Treatment(reference='36'))",1,25145.40933114676,0.0,0.0
+employment_complete_case,A,"C(purpose_grouped, Treatment(reference='debt_consolidation'))",12,4276.428023234368,0.0,0.0
+employment_complete_case,A,"C(home_ownership_grouped, Treatment(reference='MORTGAGE'))",3,4793.195425768302,0.0,0.0
+employment_complete_case,A,"C(verification_status, Treatment(reference='Not Verified'))",2,1100.7866973746225,9.272691023610215e-240,1.7515083044597072e-239
+employment_complete_case,A,"C(application_type, Treatment(reference='Individual'))",1,203.14288414184315,4.3053678137465604e-46,5.630096371822425e-46
+employment_complete_case,A,"C(issue_year, Treatment(reference='2015'))",11,7447.43181676323,0.0,0.0
+employment_complete_case,A,fico_per_10,1,9852.191913619035,0.0,0.0
+employment_complete_case,A,log2_annual_inc,1,315.82601107994515,1.1751811023190876e-70,1.8161889763113172e-70
+employment_complete_case,A,log2_loan_to_annual_income,1,4648.008223126851,0.0,0.0
+employment_complete_case,A,dti_per_10,1,3415.0789424064415,0.0,0.0
+employment_complete_case,A,revol_util_per_10,1,134.653291065205,3.9316373530754857e-31,4.774131071591662e-31
+employment_complete_case,A,credit_history_years,1,663.5662207249394,2.504793165252176e-146,4.258148380928699e-146
+employment_complete_case,A,emp_length_years,1,4.606630775826595,0.031848548515886844,0.031848548515886844
+employment_complete_case,A,delinq_2yrs,1,99.256648124008,2.2181075135872568e-23,2.5138551820655578e-23
+employment_complete_case,A,inq_last_6mths,1,4968.614244797497,0.0,0.0
+employment_complete_case,A,open_acc_per_5,1,212.61344628427966,3.6957473899552006e-48,5.235642135769867e-48
+employment_complete_case,A,pub_rec,1,38.66165668800011,5.040135159334708e-10,5.355143606793127e-10
