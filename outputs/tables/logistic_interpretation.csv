@@ -1,0 +1,35 @@
+parameter,feature,coefficient,odds_ratio,training_standardized_coefficient,comparison
+Intercept,Intercept,2.298479949984996,9.959032715722216,,Log-odds at zero numeric values and all categorical references
+fico_per_10,fico_per_10,-0.07299533867746426,0.9296051632051902,-0.22586748003959656,Per 10 FICO points; training-only winsorization where specified
+log2_annual_inc,log2_annual_inc,-0.05321773989699739,0.9481735347960968,-0.040201589465141296,Per doubling of annual income; training-only winsorization where specified
+log2_loan_to_annual_income,log2_loan_to_annual_income,0.9802490268038181,2.665119845575376,0.12818540632724762,Per doubling of 1 + loan amount / annual income; training-only winsorization where specified
+income_or_dti_missing,income_or_dti_missing,0.48670798916429225,1.626951452553175,0.0030816306825727224,Per 1 versus 0; training-only winsorization where specified
+dti_per_10,dti_per_10,0.1841341016429534,1.2021770262015936,0.1538695991039276,Per 10 DTI percentage points; training-only winsorization where specified
+revol_util_per_10,revol_util_per_10,-0.017253755234303947,0.9828942384293393,-0.041480015963315964,Per 10 utilization percentage points; training-only winsorization where specified
+credit_history_years,credit_history_years,-0.005183471055602875,0.9948299399486328,-0.03836450353264809,Per 1 year of credit history; training-only winsorization where specified
+emp_length_years,emp_length_years,-0.001197411087693324,0.9988033055229087,-0.004281684756278992,Per 1 year of employment; training-only winsorization where specified
+emp_length_years_was_missing,emp_length_years_was_missing,0.4401449943827572,1.5529323686584455,0.10015716403722763,Per 1 versus 0; training-only winsorization where specified
+delinq_2yrs,delinq_2yrs,0.02789464108238576,1.0282873394728886,0.021552089601755142,Per 1 delinquency in the previous two years; training-only winsorization where specified
+inq_last_6mths,inq_last_6mths,0.07015458624103593,1.0726739890779107,0.06749488413333893,Per 1 inquiry in the previous six months; training-only winsorization where specified
+open_acc_per_5,open_acc_per_5,0.05436921819483412,1.0558743782263438,0.05748561769723892,Per 5 open accounts; training-only winsorization where specified
+pub_rec,pub_rec,0.050941511254714314,1.0522613460374686,0.025914685800671577,Per 1 derogatory public record; training-only winsorization where specified
+int_rate_per_5,int_rate_per_5,0.40788926357110916,1.5036406441552634,0.37302854657173157,Per 5 interest-rate percentage points; training-only winsorization where specified
+term_months_60,term_months,0.5921772718429565,1.807920467599666,0.5921772718429565,60 versus 36 (reference)
+purpose_grouped_OTHER_RARE,purpose_grouped,0.2803328037261963,1.3235702281511712,0.2803328037261963,OTHER_RARE versus debt_consolidation (reference)
+purpose_grouped_car,purpose_grouped,-0.08847393840551376,0.9153269653053443,-0.08847393840551376,car versus debt_consolidation (reference)
+purpose_grouped_credit_card,purpose_grouped,-0.07251519709825516,0.9300516124671423,-0.07251519709825516,credit_card versus debt_consolidation (reference)
+purpose_grouped_home_improvement,purpose_grouped,0.08045363426208496,1.0837785952829824,0.08045363426208496,home_improvement versus debt_consolidation (reference)
+purpose_grouped_house,purpose_grouped,-0.051463183015584946,0.9498386195121103,-0.051463183015584946,house versus debt_consolidation (reference)
+purpose_grouped_major_purchase,purpose_grouped,0.07371573895215988,1.0765007547665795,0.07371573895215988,major_purchase versus debt_consolidation (reference)
+purpose_grouped_medical,purpose_grouped,0.1786387860774994,1.1955888028397978,0.1786387860774994,medical versus debt_consolidation (reference)
+purpose_grouped_moving,purpose_grouped,0.12224645912647247,1.13003257430401,0.12224645912647247,moving versus debt_consolidation (reference)
+purpose_grouped_other,purpose_grouped,0.058354899287223816,1.0600911545522298,0.058354899287223816,other versus debt_consolidation (reference)
+purpose_grouped_small_business,purpose_grouped,0.42801451683044434,1.5342083526484438,0.42801451683044434,small_business versus debt_consolidation (reference)
+purpose_grouped_vacation,purpose_grouped,0.11627523601055145,1.1233050035770675,0.11627523601055145,vacation versus debt_consolidation (reference)
+purpose_grouped_wedding,purpose_grouped,-0.4919915795326233,0.6114075141477597,-0.4919915795326233,wedding versus debt_consolidation (reference)
+home_ownership_grouped_OTHER_RARE,home_ownership_grouped,0.12062254548072815,1.1281989881821692,0.12062254548072815,OTHER_RARE versus MORTGAGE (reference)
+home_ownership_grouped_OWN,home_ownership_grouped,0.16320793330669403,1.17728146026655,0.16320793330669403,OWN versus MORTGAGE (reference)
+home_ownership_grouped_RENT,home_ownership_grouped,0.3209366798400879,1.378418296463393,0.3209366798400879,RENT versus MORTGAGE (reference)
+verification_status_Source Verified,verification_status,0.13866783678531647,1.1487424666342698,0.13866783678531647,Source Verified versus Not Verified (reference)
+verification_status_Verified,verification_status,0.040092576295137405,1.0409071330580066,0.040092576295137405,Verified versus Not Verified (reference)
+application_type_Joint App,application_type,-0.11789178103208542,0.8887922315883219,-0.11789178103208542,Joint App versus Individual (reference)

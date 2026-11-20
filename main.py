@@ -29,15 +29,10 @@ def validate_and_check_data(file_path):
     print("\n" + "=" * 50)
     print("🚨 3. Data Leakage Check")
     print("=" * 50)
-    # Common LendingClub data leakage fields (these are post-origination info; using them in a predictive model is cheating)
-    leakage_columns = [
-        'recoveries', 'collection_recovery_fee', 'total_rec_prncp',
-        'total_rec_int', 'total_rec_late_fee', 'out_prncp', 'out_prncp_inv',
-        'last_pymnt_amnt', 'last_pymnt_d', 'next_pymnt_d', 'issue_d'
-    ]
+    # Use the canonical post-outcome list; issue_d is an origination field, not leakage.
+    from src.lending_club_data_cleaning import LEAKAGE_FIELDS
 
-    # Check if our data contains any of these "cheating" fields
-    found_leakage = [col for col in leakage_columns if col in df.columns]
+    found_leakage = sorted(LEAKAGE_FIELDS.intersection(df.columns))
 
     if found_leakage:
         print(
@@ -47,8 +42,7 @@ def validate_and_check_data(file_path):
 
 
 if __name__ == "__main__":
-    # Point to the cleaned data file you just generated
-    cleaned_data_path = "data/cleaned/lending_club_clean.csv.gz"
+    cleaned_data_path = "data/cleaned/clean_v1/lending_club_clean.csv.gz"
     validate_and_check_data(cleaned_data_path)
 
 

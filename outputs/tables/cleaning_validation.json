@@ -1,9 +1,72 @@
 {
-  "duplicate_nonmissing_ids": 0,
-  "leakage_fields_present": [],
-  "outcome_counts": {
-    "0": 1078739,
-    "1": 269360
+  "actual": {
+    "default_rate": 0.19980728418313493,
+    "duplicates": {
+      "duplicate_id_rows_removed": 0,
+      "exact_rows_removed": 0
+    },
+    "final_row_count": 1348099,
+    "issue_date_range": {
+      "maximum": "2018-12-01",
+      "minimum": "2007-06-01"
+    },
+    "outcome_counts": {
+      "charged_off_or_default": 269360,
+      "fully_paid": 1078739
+    },
+    "raw_row_count": 2260701,
+    "status_exclusions": {
+      "by_status": {
+        "<missing>": 33,
+        "Current": 878317,
+        "In Grace Period": 8436,
+        "Late (16-30 days)": 4349,
+        "Late (31-120 days)": 21467
+      },
+      "total": 912602
+    }
   },
-  "row_count": 1348099
+  "checks": {
+    "default_rate": true,
+    "duplicates": true,
+    "final_row_count": true,
+    "ids_nonmissing_and_unique": true,
+    "issue_date_range": true,
+    "issue_dates_valid": true,
+    "missing_indicators_consistent": true,
+    "missingness_matches_report": true,
+    "no_impossible_values_remain": true,
+    "no_post_outcome_fields": true,
+    "outcome_binary_and_nonmissing": true,
+    "outcome_counts": true,
+    "outcome_matches_original_status": true,
+    "raw_row_count": true,
+    "real_value_parsing_matches": true,
+    "schema_expected": true,
+    "status_exclusions": true
+  },
+  "invalid_values_remaining": {},
+  "leakage_fields_present": [],
+  "missing_indicator_mismatches": {},
+  "missingness_report_mismatches": {},
+  "parsing_mismatch_counts": {
+    "credit_history_months": 0,
+    "earliest_cr_line_date": 0,
+    "emp_length_years": 0,
+    "fico_score": 0,
+    "int_rate": 0,
+    "issue_date": 0,
+    "revol_util": 0,
+    "term_months": 0
+  },
+  "parsing_rows_checked": 1348099,
+  "passed": true,
+  "retained_extreme_values": {
+    "annual_inc": 10999200.0,
+    "credit_history_months": 999.0,
+    "dti": 999.0,
+    "loan_amnt": 40000.0,
+    "revol_util": 892.3
+  },
+  "unexpected_columns": []
 }

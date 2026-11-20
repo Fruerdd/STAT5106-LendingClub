@@ -1,42 +1,42 @@
-column,pandas_dtype,description
-id,int64,Application/origination-time field from the frozen source data.
-loan_amnt,float64,Application/origination-time field from the frozen source data.
-int_rate,float64,Origination interest rate in numeric percentage points.
-installment,float64,Application/origination-time field from the frozen source data.
-grade,object,Application/origination-time field from the frozen source data.
-sub_grade,object,Application/origination-time field from the frozen source data.
-home_ownership,object,Application/origination-time field from the frozen source data.
-annual_inc,float64,Application/origination-time field from the frozen source data.
-verification_status,object,Application/origination-time field from the frozen source data.
-issue_d,object,Application/origination-time field from the frozen source data.
-loan_status,object,Original Lending Club loan status retained for auditing.
-purpose,object,Application/origination-time field from the frozen source data.
-addr_state,object,Application/origination-time field from the frozen source data.
-dti,float64,Application/origination-time field from the frozen source data.
-delinq_2yrs,float64,Application/origination-time field from the frozen source data.
-earliest_cr_line,object,Application/origination-time field from the frozen source data.
-fico_range_low,float64,Application/origination-time field from the frozen source data.
-fico_range_high,float64,Application/origination-time field from the frozen source data.
-inq_last_6mths,float64,Application/origination-time field from the frozen source data.
-mths_since_last_delinq,float64,Application/origination-time field from the frozen source data.
-mths_since_last_record,float64,Application/origination-time field from the frozen source data.
-open_acc,float64,Application/origination-time field from the frozen source data.
-pub_rec,float64,Application/origination-time field from the frozen source data.
-revol_bal,float64,Application/origination-time field from the frozen source data.
-revol_util,float64,Revolving-line utilization in numeric percentage points.
-total_acc,float64,Application/origination-time field from the frozen source data.
-application_type,object,Application/origination-time field from the frozen source data.
-default,int64,Resolved outcome: Fully Paid=0; Charged Off or Default=1.
-term_months,float64,Original loan term parsed into months.
-emp_length_years,float64,Employment length in years; <1 year=0 and 10+ years=10.
-issue_date,object,Loan issue month parsed from issue_d.
-earliest_cr_line_date,object,Earliest credit-line month with two-digit-year century correction.
-credit_history_months,float64,Whole months between earliest credit line and issue date.
-fico_score,float64,Midpoint of origination fico_range_low and fico_range_high.
-loan_amnt_was_missing,int64,Missingness indicator derived before modelling.
-annual_inc_was_missing,int64,Missingness indicator derived before modelling.
-dti_was_missing,int64,Missingness indicator derived before modelling.
-emp_length_years_was_missing,int64,Missingness indicator derived before modelling.
-revol_util_was_missing,int64,Missingness indicator derived before modelling.
-credit_history_months_was_missing,int64,Missingness indicator derived before modelling.
-fico_score_was_missing,int64,Missingness indicator derived before modelling.
+column,pandas_dtype,description,unit,source_or_derivation,permitted_as_predictor,approved_use
+id,int64,Unique Lending Club loan identifier.,identifier,Frozen raw dataset,no,"Identifier, audit, raw date, or excluded field"
+loan_amnt,float64,Listed loan amount applied for by the borrower.,USD,Frozen raw dataset,no,Source for approved derived predictors only
+int_rate,float64,Origination interest rate.,percentage points,Frozen raw dataset,yes,Approved origination-time predictor
+installment,float64,Monthly payment owed after origination.,USD per month,Frozen raw dataset,no,"Identifier, audit, raw date, or excluded field"
+grade,object,Lending Club assigned loan grade.,category,Frozen raw dataset,yes,Approved origination-time predictor
+sub_grade,object,Lending Club assigned loan subgrade.,category,Frozen raw dataset,no,"Identifier, audit, raw date, or excluded field"
+home_ownership,object,Borrower-reported home-ownership status.,category,Frozen raw dataset,yes,Approved origination-time predictor
+annual_inc,float64,Self-reported annual income.,USD per year,Frozen raw dataset,no,Source for approved derived predictors only
+verification_status,object,Income verification status.,category,Frozen raw dataset,yes,Approved origination-time predictor
+issue_d,object,Origination month retained for temporal auditing and splitting.,month,Frozen raw dataset,no,"Identifier, audit, raw date, or excluded field"
+loan_status,object,Original loan status retained for outcome auditing.,category,Frozen raw dataset,no,"Identifier, audit, raw date, or excluded field"
+purpose,object,Borrower-provided loan purpose.,category,Frozen raw dataset,yes,Approved origination-time predictor
+addr_state,object,Borrower-provided state.,category,Frozen raw dataset,no,"Identifier, audit, raw date, or excluded field"
+dti,float64,Debt-to-income ratio at application.,percentage points,Frozen raw dataset,yes,Approved origination-time predictor
+delinq_2yrs,float64,Delinquencies in the previous two years.,events,Frozen raw dataset,yes,Approved origination-time predictor
+earliest_cr_line,object,Month of the borrower's earliest reported credit line.,month,Frozen raw dataset,no,"Identifier, audit, raw date, or excluded field"
+fico_range_low,float64,Lower origination FICO range boundary.,FICO points,Frozen raw dataset,no,Source for approved derived predictors only
+fico_range_high,float64,Upper origination FICO range boundary.,FICO points,Frozen raw dataset,no,Source for approved derived predictors only
+inq_last_6mths,float64,Credit inquiries in the previous six months.,inquiries,Frozen raw dataset,yes,Approved origination-time predictor
+mths_since_last_delinq,float64,Months since the last delinquency.,months,Frozen raw dataset,no,Only missingness indicators may be sensitivity features
+mths_since_last_record,float64,Months since the last public record.,months,Frozen raw dataset,no,Only missingness indicators may be sensitivity features
+open_acc,float64,Open credit lines in the borrower's credit file.,accounts,Frozen raw dataset,yes,Approved origination-time predictor
+pub_rec,float64,Derogatory public records.,records,Frozen raw dataset,yes,Approved origination-time predictor
+revol_bal,float64,Total revolving credit balance.,USD,Frozen raw dataset,no,"Identifier, audit, raw date, or excluded field"
+revol_util,float64,Revolving-line utilization rate.,percentage points,Frozen raw dataset,yes,Approved origination-time predictor
+total_acc,float64,Total credit lines in the borrower's credit file.,accounts,Frozen raw dataset,no,"Identifier, audit, raw date, or excluded field"
+application_type,object,Individual or joint application.,category,Frozen raw dataset,yes,Approved origination-time predictor
+default,int64,Resolved outcome: Fully Paid=0; Charged Off/Default=1.,binary,Derived from loan_status,no,Prediction/inference target
+term_months,float64,Original loan term parsed into months.,months,Derived from term,yes,Approved origination-time predictor
+emp_length_years,float64,Employment length; <1 year=0 and 10+ years=10.,years,Derived from emp_length,yes,Approved origination-time predictor
+issue_date,object,Loan issue month.,date,Parsed from issue_d,no,"Identifier, audit, raw date, or excluded field"
+earliest_cr_line_date,object,Earliest credit-line month with century correction.,date,Parsed from earliest_cr_line and issue_date,no,"Identifier, audit, raw date, or excluded field"
+credit_history_months,float64,Whole months between earliest credit line and issue date.,months,Derived from issue_date and earliest_cr_line_date,yes,Approved origination-time predictor
+fico_score,float64,Midpoint of origination FICO bounds.,FICO points,Mean of fico_range_low and fico_range_high,yes,Approved origination-time predictor
+loan_amnt_was_missing,int64,Indicator that loan_amnt was missing after cleaning.,binary,Derived from missingness of loan_amnt,no,"Identifier, audit, raw date, or excluded field"
+annual_inc_was_missing,int64,Indicator that annual_inc was missing after cleaning.,binary,Derived from missingness of annual_inc,no,"Identifier, audit, raw date, or excluded field"
+dti_was_missing,int64,Indicator that dti was missing after cleaning.,binary,Derived from missingness of dti,no,"Identifier, audit, raw date, or excluded field"
+emp_length_years_was_missing,int64,Indicator that emp_length_years was missing after cleaning.,binary,Derived from missingness of emp_length_years,no,"Identifier, audit, raw date, or excluded field"
+revol_util_was_missing,int64,Indicator that revol_util was missing after cleaning.,binary,Derived from missingness of revol_util,no,"Identifier, audit, raw date, or excluded field"
+credit_history_months_was_missing,int64,Indicator that credit_history_months was missing after cleaning.,binary,Derived from missingness of credit_history_months,no,"Identifier, audit, raw date, or excluded field"
+fico_score_was_missing,int64,Indicator that fico_score was missing after cleaning.,binary,Derived from missingness of fico_score,no,"Identifier, audit, raw date, or excluded field"
