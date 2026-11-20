@@ -1,0 +1,259 @@
+{
+  "candidate_count": 12,
+  "candidate_families": [
+    "logistic_regression",
+    "random_forest",
+    "hist_gradient_boosting"
+  ],
+  "categorical_features": [
+    "term_months",
+    "purpose_grouped",
+    "home_ownership_grouped",
+    "verification_status",
+    "application_type"
+  ],
+  "class_imbalance": "No resampling; unweighted and class-weighted candidates compared",
+  "excluded_fields": [
+    "id",
+    "issue_date",
+    "issue_year",
+    "loan_status",
+    "grade",
+    "sub_grade",
+    "all post-outcome and audit fields"
+  ],
+  "feature_contract": "Model C without issue_year; interest rate included and grade excluded",
+  "feature_specification": "outputs/tables/feature_specification.csv",
+  "input": "data/cleaned/clean_v1/lending_club_clean.csv.gz",
+  "numeric_features": [
+    "fico_per_10",
+    "log2_annual_inc",
+    "log2_loan_to_annual_income",
+    "income_or_dti_missing",
+    "dti_per_10",
+    "revol_util_per_10",
+    "credit_history_years",
+    "emp_length_years",
+    "emp_length_years_was_missing",
+    "delinq_2yrs",
+    "inq_last_6mths",
+    "open_acc_per_5",
+    "pub_rec",
+    "int_rate_per_5"
+  ],
+  "preprocessing": {
+    "categorical_fill_values": {
+      "application_type": "Individual",
+      "home_ownership_grouped": "MORTGAGE",
+      "purpose_grouped": "debt_consolidation",
+      "term_months": "36",
+      "verification_status": "Source Verified"
+    },
+    "numeric_medians": {
+      "credit_history_years": 14.75,
+      "delinq_2yrs": 0.0,
+      "dti_per_10": 1.7640000581741333,
+      "emp_length_years": 6.0,
+      "emp_length_years_was_missing": 0.0,
+      "fico_per_10": 69.19999694824219,
+      "income_or_dti_missing": 0.0,
+      "inq_last_6mths": 0.0,
+      "int_rate_per_5": 2.5480000972747803,
+      "log2_annual_inc": 15.988152503967285,
+      "log2_loan_to_annual_income": 0.2630344033241272,
+      "open_acc_per_5": 2.200000047683716,
+      "pub_rec": 0.0,
+      "revol_util_per_10": 5.389999866485596
+    },
+    "processed_feature_names": [
+      "fico_per_10",
+      "log2_annual_inc",
+      "log2_loan_to_annual_income",
+      "income_or_dti_missing",
+      "dti_per_10",
+      "revol_util_per_10",
+      "credit_history_years",
+      "emp_length_years",
+      "emp_length_years_was_missing",
+      "delinq_2yrs",
+      "inq_last_6mths",
+      "open_acc_per_5",
+      "pub_rec",
+      "int_rate_per_5",
+      "term_months_60",
+      "purpose_grouped_OTHER_RARE",
+      "purpose_grouped_car",
+      "purpose_grouped_credit_card",
+      "purpose_grouped_home_improvement",
+      "purpose_grouped_house",
+      "purpose_grouped_major_purchase",
+      "purpose_grouped_medical",
+      "purpose_grouped_moving",
+      "purpose_grouped_other",
+      "purpose_grouped_small_business",
+      "purpose_grouped_vacation",
+      "purpose_grouped_wedding",
+      "home_ownership_grouped_OTHER_RARE",
+      "home_ownership_grouped_OWN",
+      "home_ownership_grouped_RENT",
+      "verification_status_Source Verified",
+      "verification_status_Verified",
+      "application_type_Joint App"
+    ],
+    "rare_levels": {
+      "home_ownership_grouped": [
+        "ANY",
+        "NONE",
+        "OTHER"
+      ],
+      "purpose_grouped": [
+        "educational",
+        "renewable_energy"
+      ]
+    },
+    "rare_min_count": 1000,
+    "reference_levels": {
+      "application_type": "Individual",
+      "home_ownership_grouped": "MORTGAGE",
+      "purpose_grouped": "debt_consolidation",
+      "term_months": "36",
+      "verification_status": "Not Verified"
+    },
+    "training_category_counts": {
+      "application_type": {
+        "Individual": 1116773,
+        "Joint App": 5687
+      },
+      "home_ownership_grouped": {
+        "ANY": 66,
+        "MORTGAGE": 553517,
+        "NONE": 50,
+        "OTHER": 182,
+        "OWN": 117242,
+        "RENT": 451403
+      },
+      "purpose_grouped": {
+        "car": 11771,
+        "credit_card": 251952,
+        "debt_consolidation": 657652,
+        "educational": 423,
+        "home_improvement": 69448,
+        "house": 5019,
+        "major_purchase": 23453,
+        "medical": 11872,
+        "moving": 7532,
+        "other": 60166,
+        "renewable_energy": 770,
+        "small_business": 13209,
+        "vacation": 6845,
+        "wedding": 2348
+      },
+      "term_months": {
+        "36": 853383,
+        "60": 269077
+      },
+      "verification_status": {
+        "Not Verified": 329602,
+        "Source Verified": 432045,
+        "Verified": 360813
+      }
+    },
+    "training_means": {
+      "credit_history_years": 16.25836673683908,
+      "delinq_2yrs": 0.3092119095557971,
+      "dti_per_10": 1.8143513804401419,
+      "emp_length_years": 5.984465370703633,
+      "emp_length_years_was_missing": 0.054782353045988275,
+      "fico_per_10": 69.70668778842695,
+      "income_or_dti_missing": 4.0090515474938976e-05,
+      "inq_last_6mths": 0.6766361384815495,
+      "int_rate_per_5": 2.6260028403805085,
+      "log2_annual_inc": 15.982966255213443,
+      "log2_loan_to_annual_income": 0.2747635439015725,
+      "open_acc_per_5": 2.313849047956369,
+      "pub_rec": 0.204744935231545,
+      "revol_util_per_10": 5.332189438386253
+    },
+    "training_standard_deviations": {
+      "credit_history_years": 7.401315281037297,
+      "delinq_2yrs": 0.7726247324029683,
+      "dti_per_10": 0.8356387965673495,
+      "emp_length_years": 3.5757851253299897,
+      "emp_length_years_was_missing": 0.22755493147816952,
+      "fico_per_10": 3.0942726498963187,
+      "income_or_dti_missing": 0.006331580231226681,
+      "inq_last_6mths": 0.9620879795576179,
+      "int_rate_per_5": 0.9145338695748726,
+      "log2_annual_inc": 0.7554170760154645,
+      "log2_loan_to_annual_income": 0.13076820565199293,
+      "open_acc_per_5": 1.0573191891639322,
+      "pub_rec": 0.5087145073316477,
+      "revol_util_per_10": 2.404115243320789
+    },
+    "winsor_bounds": {
+      "credit_history_years": {
+        "lower": 3.5,
+        "upper": 43.08333206176758
+      },
+      "delinq_2yrs": {
+        "lower": 0.0,
+        "upper": 5.0
+      },
+      "dti_per_10": {
+        "lower": 0.11500000208616257,
+        "upper": 3.9159998893737793
+      },
+      "inq_last_6mths": {
+        "lower": 0.0,
+        "upper": 5.0
+      },
+      "log2_annual_inc": {
+        "lower": 13.872674942016602,
+        "upper": 18.274124145507812
+      },
+      "log2_loan_to_annual_income": {
+        "lower": 0.029747342690825462,
+        "upper": 0.5849624872207642
+      },
+      "open_acc_per_5": {
+        "lower": 0.6000000238418579,
+        "upper": 6.400000095367432
+      },
+      "pub_rec": {
+        "lower": 0.0,
+        "upper": 3.0
+      },
+      "revol_util_per_10": {
+        "lower": 0.019999999552965164,
+        "upper": 9.960000038146973
+      }
+    },
+    "winsor_quantiles": [
+      0.005,
+      0.995
+    ]
+  },
+  "preprocessing_fitted_on": "training partition only",
+  "random_seed": 5106,
+  "selected_by_family": {
+    "hist_gradient_boosting": "hist_gradient_boosting_leaves31_none",
+    "logistic_regression": "logistic_C0.1_none",
+    "random_forest": "random_forest_leaf20_none"
+  },
+  "selected_final_model": "hist_gradient_boosting_leaves31_none",
+  "selection_rule": "Minimum validation log loss within each family, then across families",
+  "software": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "python": "3.12.6",
+    "scikit_learn": "1.9.1"
+  },
+  "target": "default",
+  "test_cutoff": "2018-01-01",
+  "test_evaluated_candidates": [
+    "logistic_C0.1_none",
+    "random_forest_leaf20_none",
+    "hist_gradient_boosting_leaves31_none"
+  ],
+  "validation_cutoff": "2017-01-01"
+}
