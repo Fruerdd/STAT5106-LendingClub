@@ -1,0 +1,19 @@
+{
+  "files": {
+    "outputs/figures/validation_calibration_plot.png": "014dc914e0e102a0f2aaac5de4aaca4faf597ae22b9802248f8acd087e1a1c8a",
+    "outputs/figures/validation_roc_pr_curves.png": "4a65cb2c737e04b8f92390a48dd33c987703fb40e867a956e053fee9b96b9d04",
+    "outputs/figures/validation_threshold_tradeoffs.png": "6186a8da5133387e8557f031a3d854da764d5c8e26a07e77c4f859e07624eba0",
+    "outputs/tables/validation_calibration_bins.csv": "6b40107a29da0198841c5c0de32b57556746f9b4a9685ecf3588a8cc6ab03297",
+    "outputs/tables/validation_missingness_by_partition.csv": "39d38489e075b3a66ed52a454d94ceaab760d74706c0d1c9eb366af46ec2cabe",
+    "outputs/tables/validation_overall_metrics.csv": "c2ce883d05272cfb6834df12dc23d12283629aeb20b6869c6f95fa667a80dab2",
+    "outputs/tables/validation_paired_model_deltas.csv": "6fdac7344b496c8c8ef3f1e9033fe6fd9907fa32176152d1c38cb1408b078dd5",
+    "outputs/tables/validation_robustness_checks.csv": "61e89de59310b6e6fce0cd73c613a6cd12ccd1de7b648a29e367e6cf801b6443",
+    "outputs/tables/validation_subgroup_performance.csv": "589fd1751693b80d300dfbc14e2659f39d29f7be67307dd8de292a4c9ac11e22",
+    "outputs/tables/validation_threshold_curve_validation.csv": "a364adc7018442fefe2e1e4ad25e30c5aa8535f82f44b481d04a5f059be10ae9",
+    "outputs/tables/validation_threshold_performance.csv": "4d0ebcb8abac2c752ea26b46e750567bc547d37c2ad88b609e784fbaaa46888b",
+    "outputs/tables/validation_vintage_default_rates.csv": "db69824d13d47d698accc53aea03454ec68fd4c3c1fbb2955bcb7a0195f24132",
+    "report/member5_validation_report.md": "d9ed416379b427159bfa6c676edab3147bce7c39756ed9a25af0dcf4eb5b1482"
+  },
+  "python_version": "3.14.6",
+  "stale_validation_files_not_written_by_this_run": []
+}
