@@ -27,7 +27,10 @@ def _preds(**changes):
 
 
 def test_valid_predictions_pass():
-    assert len(v5.verify_predictions(_cohort(), _preds(), "2018-01-01")) == 3
+    predictions, summary = v5.verify_predictions(_cohort(), _preds(), "2018-01-01", ())
+    assert len(predictions) == 3
+    assert summary["rows_per_model"] == 3
+    assert summary["n_models"] == 1
 
 
 @pytest.mark.parametrize("changes", [
@@ -42,7 +45,7 @@ def test_valid_predictions_pass():
 ])
 def test_invalid_predictions_fail(changes):
     with pytest.raises(ValueError):
-        v5.verify_predictions(_cohort(), _preds(**changes), "2018-01-01")
+        v5.verify_predictions(_cohort(), _preds(**changes), "2018-01-01", ())
 
 
 def test_threshold_stats():

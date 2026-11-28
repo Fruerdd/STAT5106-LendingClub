@@ -1,0 +1,19 @@
+{
+  "model": "reference_plus_combined",
+  "selected_rule": "maximum_f1",
+  "validation_recall_targets": {
+    "recall_95": 0.95,
+    "recall_99": 0.99,
+    "recall_995_buffered": 0.995,
+    "recall_100_validation": 1.0
+  },
+  "thresholds": {
+    "maximum_f1": 0.3097699135541916,
+    "previous_rule": 0.33609484136104584,
+    "recall_95": 0.13938315957784653,
+    "recall_99": 0.0763930194079876,
+    "recall_995_buffered": 0.06079309247434139,
+    "recall_100_validation": 0.01642773998901248,
+    "flag_all": 0.0
+  }
+}

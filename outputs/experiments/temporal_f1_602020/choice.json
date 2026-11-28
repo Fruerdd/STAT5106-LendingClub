@@ -1,0 +1,22 @@
+{
+  "training_winner": "reference_plus_combined",
+  "candidates": [
+    "recent",
+    "loan_terms",
+    "combined",
+    "reference_plus_combined"
+  ],
+  "half_life_months": 12,
+  "rounds": 351,
+  "reference": "ordinal_subgrade_credit_ratios",
+  "selected": "reference_plus_combined",
+  "validation_accuracy_floor": 0.6637749425116831,
+  "threshold": 0.3097699135541916,
+  "extra_features": [
+    "implied_monthly_debt",
+    "installment_to_existing_debt",
+    "revolving_balance_per_open_account",
+    "loan_amount_multiple_of_1000"
+  ],
+  "challenger_test_assessed": true
+}

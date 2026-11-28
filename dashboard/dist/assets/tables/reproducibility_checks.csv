@@ -1,0 +1,59 @@
+check,passed,detail
+isolated_environment,True,Separate virtual environment
+command_tests,True,exit 0; tests.log
+command_cleaning,True,exit 0; cleaning.log
+command_member1,True,exit 0; member1.log
+command_member2,True,exit 0; member2.log
+command_member3,True,exit 0; member3.log
+command_member4,True,exit 0; member4.log
+command_member5,True,exit 0; member5.log
+cleaned_csv_content,True,SHA-256 of decompressed CSV (gzip timestamps ignored)
+cleaning_report,True,"Exact rows, exclusions, duplicates, outcomes, dates, invalid values and missingness"
+table_data_dictionary.csv,True,maximum absolute numeric difference 0
+table_default_rate_by_annual_inc_bins.csv,True,maximum absolute numeric difference 0
+table_default_rate_by_fico_score_bins.csv,True,maximum absolute numeric difference 0
+table_default_rate_by_grade.csv,True,maximum absolute numeric difference 0
+table_default_rate_by_int_rate_bins.csv,True,maximum absolute numeric difference 0
+table_default_rate_by_issue_quarter.csv,True,maximum absolute numeric difference 0
+table_default_rate_by_purpose.csv,True,maximum absolute numeric difference 0
+table_eda_correlation_matrix.csv,True,maximum absolute numeric difference 3.89e-16
+table_eda_numeric_summary.csv,True,maximum absolute numeric difference 0
+table_feature_specification.csv,True,maximum absolute numeric difference 0
+table_inference_global_tests.csv,True,maximum absolute numeric difference 5.19e-09
+table_inference_odds_ratios.csv,True,maximum absolute numeric difference 7.45e-11
+table_inference_sample_summary.csv,True,maximum absolute numeric difference 1.33e-14
+table_logistic_interpretation.csv,True,maximum absolute numeric difference 0
+table_missingness.csv,True,maximum absolute numeric difference 0
+table_model_comparison.csv,True,maximum absolute numeric difference 0
+table_model_specifications.csv,True,maximum absolute numeric difference 0
+table_out_of_time_predictions.csv,True,maximum absolute numeric difference 2.78e-16
+table_temporal_split.csv,True,maximum absolute numeric difference 0
+table_validation_calibration_bins.csv,True,maximum absolute numeric difference 0
+table_validation_missingness_by_partition.csv,True,maximum absolute numeric difference 0
+table_validation_overall_metrics.csv,True,maximum absolute numeric difference 8.88e-16
+table_validation_paired_model_deltas.csv,True,maximum absolute numeric difference 0
+table_validation_robustness_checks.csv,True,maximum absolute numeric difference 2e-15
+table_validation_subgroup_performance.csv,True,maximum absolute numeric difference 1.11e-15
+table_validation_threshold_curve_validation.csv,True,maximum absolute numeric difference 0
+table_validation_threshold_performance.csv,True,maximum absolute numeric difference 0
+table_validation_vintage_default_rates.csv,True,maximum absolute numeric difference 0
+manifest_outputs/figures/validation_calibration_plot.png,True,Generated output matches Ivy manifest
+manifest_outputs/figures/validation_roc_pr_curves.png,True,Generated output matches Ivy manifest
+manifest_outputs/figures/validation_threshold_tradeoffs.png,True,Generated output matches Ivy manifest
+manifest_outputs/tables/validation_calibration_bins.csv,True,Generated output matches Ivy manifest
+manifest_outputs/tables/validation_missingness_by_partition.csv,True,Generated output matches Ivy manifest
+manifest_outputs/tables/validation_overall_metrics.csv,True,Generated output matches Ivy manifest
+manifest_outputs/tables/validation_paired_model_deltas.csv,True,Generated output matches Ivy manifest
+manifest_outputs/tables/validation_robustness_checks.csv,True,Generated output matches Ivy manifest
+manifest_outputs/tables/validation_subgroup_performance.csv,True,Generated output matches Ivy manifest
+manifest_outputs/tables/validation_threshold_curve_validation.csv,True,Generated output matches Ivy manifest
+manifest_outputs/tables/validation_threshold_performance.csv,True,Generated output matches Ivy manifest
+manifest_outputs/tables/validation_vintage_default_rates.csv,True,Generated output matches Ivy manifest
+manifest_report/member5_validation_report.md,True,Generated output matches Ivy manifest
+robustness_no_suppressed_failures,True,0 failed robustness rows
+repeat_eda_command,True,Same input and environment
+repeat_eda_outputs,True,Changed files: []
+no_tracked_data_or_models,True,[]
+predictor_leakage_contract,True,Ivy contract rejects outcome/audit and post-origination fields
+training_only_preprocessing_recorded,True,"Minimum validation log loss within each family, then across families"
+raw_data_unchanged,True,Frozen raw checksum before/after

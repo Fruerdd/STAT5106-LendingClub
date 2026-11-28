@@ -1,0 +1,99 @@
+{
+  "status": "completed",
+  "candidates": [
+    {
+      "name": "expanded_int_rate_15",
+      "proxy": "int_rate",
+      "native": true,
+      "max_iter": 800,
+      "max_leaf_nodes": 15,
+      "learning_rate": 0.05,
+      "min_samples_leaf": 100,
+      "l2_regularization": 10.0,
+      "patience": 30
+    },
+    {
+      "name": "expanded_int_rate_31",
+      "proxy": "int_rate",
+      "native": true,
+      "max_iter": 800,
+      "max_leaf_nodes": 31,
+      "learning_rate": 0.05,
+      "min_samples_leaf": 100,
+      "l2_regularization": 5.0,
+      "patience": 30
+    },
+    {
+      "name": "expanded_grade_31",
+      "proxy": "grade",
+      "native": true,
+      "max_iter": 800,
+      "max_leaf_nodes": 31,
+      "learning_rate": 0.05,
+      "min_samples_leaf": 100,
+      "l2_regularization": 5.0,
+      "patience": 30
+    },
+    {
+      "name": "expanded_sub_grade_31",
+      "proxy": "sub_grade",
+      "native": true,
+      "max_iter": 800,
+      "max_leaf_nodes": 31,
+      "learning_rate": 0.05,
+      "min_samples_leaf": 100,
+      "l2_regularization": 5.0,
+      "patience": 30
+    }
+  ],
+  "selection": "2016 average precision, lower log loss breaks ties",
+  "specification": "report/predictive_feature_extension_specification.md",
+  "tuning_train": "Before 2016",
+  "tuning_evaluation": "2016",
+  "final_train": "Before 2017",
+  "threshold_selection": "2017 only; same full-PR-curve F1/cost selection as the preceding baseline comparison",
+  "assessment": "2018 reused test; exploratory follow-up, not an untouched final holdout",
+  "bootstrap": "1000 paired loan draws; percentile 95% CI; fitted models and thresholds fixed",
+  "seed": 5106,
+  "primary_outputs_replaced": false,
+  "selected_on_2016": "expanded_grade_31",
+  "predictor_columns": [
+    "fico_per_10",
+    "log2_annual_inc",
+    "log2_loan_to_annual_income",
+    "income_or_dti_missing",
+    "dti_per_10",
+    "revol_util_per_10",
+    "credit_history_years",
+    "emp_length_years",
+    "emp_length_years_was_missing",
+    "delinq_2yrs",
+    "inq_last_6mths",
+    "open_acc_per_5",
+    "pub_rec",
+    "term_months",
+    "purpose_grouped",
+    "home_ownership_grouped",
+    "verification_status",
+    "application_type",
+    "grade",
+    "log1p_loan_amount",
+    "payment_to_monthly_income",
+    "log1p_revolving_balance",
+    "total_credit_accounts",
+    "fraction_open_accounts",
+    "months_since_delinquency",
+    "months_since_record",
+    "addr_state"
+  ],
+  "ap_delta": 0.02268340914821254,
+  "ap_delta_ci": [
+    0.0189296868998845,
+    0.026480100253644407
+  ],
+  "thresholds_selected_on_2017": {
+    "maximum_validation_f1": 0.1981661472588825,
+    "validation_cost_5_to_1": 0.13599133644854444
+  },
+  "validation_average_precision": 0.41987157824247634
+}

@@ -1,0 +1,42 @@
+column,used_by_experiment,role,primary_dictionary_permission,description,training_missing_fraction,validation_missing_fraction,note
+id,True,audit/target only,no,Unique Lending Club loan identifier.,0.0,0.0,
+loan_amnt,True,registered feature source,no,Listed loan amount applied for by the borrower.,0.0,0.0,
+int_rate,True,registered feature source,yes,Origination interest rate.,0.0,0.0,
+installment,True,registered feature source,no,Monthly payment owed after origination.,0.0,0.0,Existing predictive extension; not an amendment of the primary inference contract
+grade,True,registered feature source,yes,Lending Club assigned loan grade.,0.0,0.0,
+sub_grade,True,registered feature source,no,Lending Club assigned loan subgrade.,0.0,0.0,Existing predictive extension; not an amendment of the primary inference contract
+home_ownership,True,registered feature source,yes,Borrower-reported home-ownership status.,0.0,0.0,
+annual_inc,True,registered feature source,no,Self-reported annual income.,4.945237674304174e-06,0.0,
+verification_status,True,registered feature source,yes,Income verification status.,0.0,0.0,
+issue_d,False,not added,no,Origination month retained for temporal auditing and splitting.,0.0,0.0,
+loan_status,False,not added,no,Original loan status retained for outcome auditing.,0.0,0.0,
+purpose,True,registered feature source,yes,Borrower-provided loan purpose.,0.0,0.0,
+addr_state,True,registered feature source,no,Borrower-provided state.,0.0,0.0,Existing predictive extension; not an amendment of the primary inference contract
+dti,True,registered feature source,yes,Debt-to-income ratio at application.,1.2363094185760436e-06,0.00011497663378087678,
+delinq_2yrs,True,registered feature source,yes,Delinquencies in the previous two years.,3.585297313870526e-05,0.0,
+earliest_cr_line,False,not added,no,Month of the borrower's earliest reported credit line.,3.585297313870526e-05,0.0,
+fico_range_low,False,not added,no,Lower origination FICO range boundary.,0.0,0.0,
+fico_range_high,False,not added,no,Upper origination FICO range boundary.,0.0,0.0,
+inq_last_6mths,True,registered feature source,yes,Credit inquiries in the previous six months.,3.585297313870526e-05,3.708923670350864e-06,
+mths_since_last_delinq,True,registered feature source,no,Months since the last delinquency.,0.5138905544724112,0.4759476299977746,Existing predictive extension; not an amendment of the primary inference contract
+mths_since_last_record,True,registered feature source,no,Months since the last public record.,0.8446799751254545,0.8033639937690082,Existing predictive extension; not an amendment of the primary inference contract
+open_acc,True,registered feature source,yes,Open credit lines in the borrower's credit file.,3.585297313870526e-05,0.0,
+pub_rec,True,registered feature source,yes,Derogatory public records.,3.585297313870526e-05,0.0,
+revol_bal,True,registered feature source,no,Total revolving credit balance.,0.0,0.0,Existing predictive extension; not an amendment of the primary inference contract
+revol_util,True,registered feature source,yes,Revolving-line utilization rate.,0.0005847743549864686,0.0006156813292782434,
+total_acc,True,registered feature source,no,Total credit lines in the borrower's credit file.,3.585297313870526e-05,0.0,Existing predictive extension; not an amendment of the primary inference contract
+application_type,True,registered feature source,yes,Individual or joint application.,0.0,0.0,
+default,True,audit/target only,no,Resolved outcome: Fully Paid=0; Charged Off/Default=1.,0.0,0.0,
+term_months,True,registered feature source,yes,Original loan term parsed into months.,0.0,0.0,
+emp_length_years,True,registered feature source,yes,Employment length; <1 year=0 and 10+ years=10.,0.05097550994672743,0.06402344039759662,
+issue_date,True,audit/target only,no,Loan issue month.,0.0,0.0,
+earliest_cr_line_date,False,not added,no,Earliest credit-line month with century correction.,3.585297313870526e-05,0.0,
+credit_history_months,True,registered feature source,yes,Whole months between earliest credit line and issue date.,3.585297313870526e-05,0.0,
+fico_score,True,registered feature source,yes,Midpoint of origination FICO bounds.,0.0,0.0,
+loan_amnt_was_missing,False,not added,no,Indicator that loan_amnt was missing after cleaning.,0.0,0.0,
+annual_inc_was_missing,False,not added,no,Indicator that annual_inc was missing after cleaning.,0.0,0.0,
+dti_was_missing,False,not added,no,Indicator that dti was missing after cleaning.,0.0,0.0,
+emp_length_years_was_missing,True,registered feature source,no,Indicator that emp_length_years was missing after cleaning.,0.0,0.0,
+revol_util_was_missing,False,not added,no,Indicator that revol_util was missing after cleaning.,0.0,0.0,
+credit_history_months_was_missing,False,not added,no,Indicator that credit_history_months was missing after cleaning.,0.0,0.0,
+fico_score_was_missing,False,not added,no,Indicator that fico_score was missing after cleaning.,0.0,0.0,

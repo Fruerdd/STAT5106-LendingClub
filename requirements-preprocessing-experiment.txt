@@ -1,0 +1,4 @@
+# Optional full preprocessing/ensemble rerun; explicit HGB stopping data require a recent sklearn.
+-r requirements-xgboost.txt
+scikit-learn==1.9.1
+joblib==1.6.0

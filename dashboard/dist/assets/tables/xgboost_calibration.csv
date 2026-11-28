@@ -1,0 +1,2 @@
+candidate,mean_predicted_prob,observed_default_rate,calibration_intercept,calibration_slope
+xgb_depth5_double,0.29495251178741455,0.15756951596292482,-0.9116254865250317,0.9348145449700817

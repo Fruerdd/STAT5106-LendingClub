@@ -309,7 +309,7 @@ class TrainOnlyPreprocessor:
         self.rare_min_count = rare_min_count
         numeric = Pipeline(
             [
-                ("impute", SimpleImputer(strategy="median")),
+                ("impute", SimpleImputer(strategy="median", keep_empty_features=True)),
                 ("winsorize", Winsorizer()),
                 ("scale", StandardScaler()),
             ]

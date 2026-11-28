@@ -1,0 +1,30 @@
+{
+  "improvement_comparison_2018.csv": {
+    "source": "outputs/experiments/feature_extension/comparison_2018.csv",
+    "sha256": "026242f62989d1352990a877218933b8f0752574680fe945352ab0866d984475"
+  },
+  "improvement_validation_overall_metrics.csv": {
+    "source": "outputs/experiments/feature_extension/validation_overall_metrics.csv",
+    "sha256": "7139e66702fba41a73ca5c69f266c88c3c3e6298ab0e5e327bc031be10b0e0b9"
+  },
+  "improvement_validated_thresholds.csv": {
+    "source": "outputs/experiments/feature_extension/validated_thresholds.csv",
+    "sha256": "dd156c3763b6eebc6f7d6644d71a189446e79a1981292bdfb5fc4c244bf1443c"
+  },
+  "improvement_paired_threshold_deltas.csv": {
+    "source": "outputs/experiments/feature_extension/paired_threshold_deltas.csv",
+    "sha256": "b3411aa7713b954ce4bce8cbb32060f54525dd5ff6f53fdb5c8b1289905b506b"
+  },
+  "improvement_validation_subgroups.csv": {
+    "source": "outputs/experiments/feature_extension/validation_subgroups.csv",
+    "sha256": "ce9105340cfb0fe5d65ce7613819745d48f1759e9767523757c4c436555faaa7"
+  },
+  "improvement_validation_calibration_bins.csv": {
+    "source": "outputs/experiments/feature_extension/validation_calibration_bins.csv",
+    "sha256": "5d6065804e58c44ae4001e2cc7c89df758e4d4dde796334e23b223133fab77ea"
+  },
+  "improvement_tuning_comparison.csv": {
+    "source": "outputs/experiments/feature_extension/tuning_comparison.csv",
+    "sha256": "5d1973aa85945eb116e86a72df7be2c00aa92ec3a8616782ccf02d97970e1709"
+  }
+}

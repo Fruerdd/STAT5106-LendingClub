@@ -1,0 +1,441 @@
+{
+  "source_commit": "1fc32869ff77fe8935dd79580b333840d68bbe70",
+  "source_has_uncommitted_changes": true,
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "python_launcher": "3.12.6",
+  "dataset_file": "accepted_2007_to_2018Q4.csv.gz",
+  "dataset_sha256": "55c16f75120f897683f02e7aabcf080d0e4a20c4832feb1d592cfa941bd62a2d",
+  "csv_rtol": 1e-06,
+  "csv_atol": 1e-10,
+  "commands": [
+    {
+      "command": "git clone --no-hardlinks --quiet <project> <workdir>/checkout",
+      "log": "clone.log",
+      "exit_code": 0,
+      "seconds": 0.07
+    },
+    {
+      "command": "<reused-environment>/venv/bin/python -m pytest -q",
+      "log": "tests.log",
+      "exit_code": 0,
+      "seconds": 14.42
+    },
+    {
+      "command": "<reused-environment>/venv/bin/python src/lending_club_data_cleaning.py --input data/raw/accepted_2007_to_2018Q4.csv.gz --output-dir data/cleaned/clean_v1",
+      "log": "cleaning.log",
+      "exit_code": 0,
+      "seconds": 62.29
+    },
+    {
+      "command": "<reused-environment>/venv/bin/python analysis/01_cleaning_member2.py",
+      "log": "member1.log",
+      "exit_code": 0,
+      "seconds": 25.87
+    },
+    {
+      "command": "<reused-environment>/venv/bin/python analysis/02_visualization_member3.py",
+      "log": "member2.log",
+      "exit_code": 0,
+      "seconds": 4.69
+    },
+    {
+      "command": "<reused-environment>/venv/bin/python analysis/03_inference_member4.py",
+      "log": "member3.log",
+      "exit_code": 0,
+      "seconds": 69.48
+    },
+    {
+      "command": "<reused-environment>/venv/bin/python analysis/04_modelling_pavel.py",
+      "log": "member4.log",
+      "exit_code": 0,
+      "seconds": 215.89
+    },
+    {
+      "command": "<reused-environment>/venv/bin/python analysis/05_validation_member5.py",
+      "log": "member5.log",
+      "exit_code": 0,
+      "seconds": 410.38
+    },
+    {
+      "command": "<reused-environment>/venv/bin/python analysis/02_visualization_member3.py",
+      "log": "member2_repeat.log",
+      "exit_code": 0,
+      "seconds": 4.6
+    }
+  ],
+  "checkout_method": "Local clone plus current source overlay; frozen data linked locally",
+  "external_remote_clone_tested": false,
+  "repeat_scope": "Fresh pipeline compared with prior saved results; EDA repeated byte-for-byte",
+  "complete": true,
+  "source_sha256": {
+    "requirements-reproducibility.txt": "5dfc488537d788ec64db76a4a8d8dbd526cf7c8c0a14ebc1b8976e538164f941",
+    "tests/test_reproducibility.py": "b8ac06aa5e74f073ea9eb85d5f85250d853fe156c27e2fbc90e028531435da0f",
+    ".gitignore": "89659bfbec760b2541bdb305b89e6983450343113b2cd0730d6583a8412efaf5",
+    "CONTRIBUTING.md": "d7ac5d0446866865d98e9085397eb298a86604d448b8ff280dbea03fb407cb04",
+    "README.md": "e49c15c9b48d86d373d600077344f3c7ab961311387c9e759af1358c26b1cb7e",
+    "analysis/01_cleaning_member2.py": "acc03d6b2239f92e231e7185d40c528120cab5884c73b05fa22e11b19f1d3c1f",
+    "analysis/02_visualization_member3.py": "38f302295e415b20c0671b0e6e38b97517cf4af53fa628b2119c3a0d331c3d8e",
+    "analysis/03_inference_member4.py": "1dffaf6df0aa1e8c7c38fcf5cd6d7cfec629eb3deb22d3e7382958a66aa5e2f8",
+    "analysis/04_modelling_pavel.py": "de2ad99ec0a36d292c40235711bb8c99c2afd66ad8c06c64f5863e5fd59291b4",
+    "analysis/05_validation_member5.py": "8fa69ae121f7ac8aaffc958b766bc274c70aaed64fb7e5ca8fcf8d29c8d67483",
+    "analysis/06_reproducibility_member6.py": "b785d36919569bca5e916b21f3844f850034387215089473a0b951566bbc598c",
+    "main.py": "51c042bd7efcb23efd927032df91e39285c1037125595b2fb95c1b61cc3a11b7",
+    "requirements.txt": "2b7d1a03c6e84682dca4914ced4f67d2516baaeaa0991bd436f7144583aaa88e",
+    "src/__init__.py": "3cc790c0766bc6548df73e429ff49083ade1b4b85005c1606056e52786123497",
+    "src/inference_features.py": "398f2d7811d39a748244354cc36cb21a578f9bf2bd07cd869f227321e8d999ef",
+    "src/inference_models.py": "74a3a9cda4757d20f7dd8e545a45802b08b8ee45c5ddc65547c3befc3cb81e3d",
+    "src/inference_reporting.py": "e4712f4eb8d74c01236c807c44644f98a21f4f09c27c0b1db3448c57efc6f025",
+    "src/lending_club_data_cleaning.py": "9fe0bb872695aa042d0c8030a6907955a903de32dd07f728433c6cd18d1689b5",
+    "src/paths.py": "874f56da4a6ffe7ab4195eb6d1938b88cac83c32a3e00cdb9a4befccfc058ae7",
+    "src/predictive_modelling.py": "36b6fd567a917fb82c4783f381a80eb7b74cd2fa791b68d899c7f04f96f00d6f",
+    "tests/test_cleaning.py": "2158970c9747efc9db22cc20f8e965c0883c40866fb8aab50837df529128a665",
+    "tests/test_inference.py": "cd4dd83891a74422368190b57d9dec29e7da82e699ef8d11fc77a6f9195b881a",
+    "tests/test_modelling.py": "dfe652a01b99c7a64b33d39b09ec1a2c491a847ed23f8b2e20889ca0557796ad",
+    "tests/test_validation_member5.py": "a2ff3b8f01c06b0fedcd3609eb328d4fe3ac952a6e5bc15b62c70f3688ad42c5"
+  },
+  "environment_setup": "New isolated environment prepared before the reproduction command",
+  "software": [
+    "cloudpickle==3.1.2",
+    "contourpy==1.4.0",
+    "cycler==0.12.1",
+    "fonttools==4.68.0",
+    "formulaic==1.2.2",
+    "iniconfig==2.3.1",
+    "interface_meta==2.0.1",
+    "joblib==1.6.0",
+    "kiwisolver==1.5.1",
+    "matplotlib==3.11.2",
+    "narwhals==2.28.0",
+    "numpy==2.5.4",
+    "packaging==26.3",
+    "pandas==2.3.3",
+    "pandas-stubs==2.3.3.260113",
+    "patsy==1.0.3",
+    "pillow==13.0.0",
+    "pluggy==1.7.0",
+    "Pygments==2.21.0",
+    "pyparsing==3.3.3",
+    "pytest==8.4.2",
+    "python-dateutil==4.0.0",
+    "pytz==2026.6",
+    "scikit-learn==1.9.1",
+    "scipy==1.18.1",
+    "seaborn==0.13.2",
+    "statsmodels==0.15.0",
+    "threadpoolctl==3.8.0",
+    "types-pytz==2026.6.0.20261031",
+    "typing_extensions==4.16.0",
+    "tzdata==2026.6",
+    "wrapt==2.5.2"
+  ],
+  "failure": null,
+  "work_directory": "<workdir>",
+  "checks": [
+    {
+      "check": "isolated_environment",
+      "passed": true,
+      "detail": "Separate virtual environment"
+    },
+    {
+      "check": "command_tests",
+      "passed": true,
+      "detail": "exit 0; tests.log"
+    },
+    {
+      "check": "command_cleaning",
+      "passed": true,
+      "detail": "exit 0; cleaning.log"
+    },
+    {
+      "check": "command_member1",
+      "passed": true,
+      "detail": "exit 0; member1.log"
+    },
+    {
+      "check": "command_member2",
+      "passed": true,
+      "detail": "exit 0; member2.log"
+    },
+    {
+      "check": "command_member3",
+      "passed": true,
+      "detail": "exit 0; member3.log"
+    },
+    {
+      "check": "command_member4",
+      "passed": true,
+      "detail": "exit 0; member4.log"
+    },
+    {
+      "check": "command_member5",
+      "passed": true,
+      "detail": "exit 0; member5.log"
+    },
+    {
+      "check": "cleaned_csv_content",
+      "passed": true,
+      "detail": "SHA-256 of decompressed CSV (gzip timestamps ignored)"
+    },
+    {
+      "check": "cleaning_report",
+      "passed": true,
+      "detail": "Exact rows, exclusions, duplicates, outcomes, dates, invalid values and missingness"
+    },
+    {
+      "check": "table_data_dictionary.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_default_rate_by_annual_inc_bins.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_default_rate_by_fico_score_bins.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_default_rate_by_grade.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_default_rate_by_int_rate_bins.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_default_rate_by_issue_quarter.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_default_rate_by_purpose.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_eda_correlation_matrix.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 3.89e-16"
+    },
+    {
+      "check": "table_eda_numeric_summary.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_feature_specification.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_inference_global_tests.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 5.19e-09"
+    },
+    {
+      "check": "table_inference_odds_ratios.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 7.45e-11"
+    },
+    {
+      "check": "table_inference_sample_summary.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 1.33e-14"
+    },
+    {
+      "check": "table_logistic_interpretation.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_missingness.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_model_comparison.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_model_specifications.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_out_of_time_predictions.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 2.78e-16"
+    },
+    {
+      "check": "table_temporal_split.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_validation_calibration_bins.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_validation_missingness_by_partition.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_validation_overall_metrics.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 8.88e-16"
+    },
+    {
+      "check": "table_validation_paired_model_deltas.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_validation_robustness_checks.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 2e-15"
+    },
+    {
+      "check": "table_validation_subgroup_performance.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 1.11e-15"
+    },
+    {
+      "check": "table_validation_threshold_curve_validation.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_validation_threshold_performance.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "table_validation_vintage_default_rates.csv",
+      "passed": true,
+      "detail": "maximum absolute numeric difference 0"
+    },
+    {
+      "check": "manifest_outputs/figures/validation_calibration_plot.png",
+      "passed": true,
+      "detail": "Generated output matches Ivy manifest"
+    },
+    {
+      "check": "manifest_outputs/figures/validation_roc_pr_curves.png",
+      "passed": true,
+      "detail": "Generated output matches Ivy manifest"
+    },
+    {
+      "check": "manifest_outputs/figures/validation_threshold_tradeoffs.png",
+      "passed": true,
+      "detail": "Generated output matches Ivy manifest"
+    },
+    {
+      "check": "manifest_outputs/tables/validation_calibration_bins.csv",
+      "passed": true,
+      "detail": "Generated output matches Ivy manifest"
+    },
+    {
+      "check": "manifest_outputs/tables/validation_missingness_by_partition.csv",
+      "passed": true,
+      "detail": "Generated output matches Ivy manifest"
+    },
+    {
+      "check": "manifest_outputs/tables/validation_overall_metrics.csv",
+      "passed": true,
+      "detail": "Generated output matches Ivy manifest"
+    },
+    {
+      "check": "manifest_outputs/tables/validation_paired_model_deltas.csv",
+      "passed": true,
+      "detail": "Generated output matches Ivy manifest"
+    },
+    {
+      "check": "manifest_outputs/tables/validation_robustness_checks.csv",
+      "passed": true,
+      "detail": "Generated output matches Ivy manifest"
+    },
+    {
+      "check": "manifest_outputs/tables/validation_subgroup_performance.csv",
+      "passed": true,
+      "detail": "Generated output matches Ivy manifest"
+    },
+    {
+      "check": "manifest_outputs/tables/validation_threshold_curve_validation.csv",
+      "passed": true,
+      "detail": "Generated output matches Ivy manifest"
+    },
+    {
+      "check": "manifest_outputs/tables/validation_threshold_performance.csv",
+      "passed": true,
+      "detail": "Generated output matches Ivy manifest"
+    },
+    {
+      "check": "manifest_outputs/tables/validation_vintage_default_rates.csv",
+      "passed": true,
+      "detail": "Generated output matches Ivy manifest"
+    },
+    {
+      "check": "manifest_report/member5_validation_report.md",
+      "passed": true,
+      "detail": "Generated output matches Ivy manifest"
+    },
+    {
+      "check": "robustness_no_suppressed_failures",
+      "passed": true,
+      "detail": "0 failed robustness rows"
+    },
+    {
+      "check": "repeat_eda_command",
+      "passed": true,
+      "detail": "Same input and environment"
+    },
+    {
+      "check": "repeat_eda_outputs",
+      "passed": true,
+      "detail": "Changed files: []"
+    },
+    {
+      "check": "no_tracked_data_or_models",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "predictor_leakage_contract",
+      "passed": true,
+      "detail": "Ivy contract rejects outcome/audit and post-origination fields"
+    },
+    {
+      "check": "training_only_preprocessing_recorded",
+      "passed": true,
+      "detail": "Minimum validation log loss within each family, then across families"
+    },
+    {
+      "check": "raw_data_unchanged",
+      "passed": true,
+      "detail": "Frozen raw checksum before/after"
+    }
+  ],
+  "working_tree_status": [
+    " M README.md",
+    " M analysis/06_reproducibility_member6.py",
+    " M report/ai_use_log.md",
+    " M tests/test_validation_member5.py",
+    "?? outputs/tables/reproducibility_audit.json",
+    "?? report/member6_reproducibility_report.md",
+    "?? requirements-reproducibility.txt",
+    "?? tests/test_reproducibility.py"
+  ],
+  "environment_preparation": {
+    "created_in_earlier_attempt_in_same_session": true,
+    "installation_succeeded": true,
+    "installation_log": "<reused-environment>/logs/install.log",
+    "installation_log_sha256": "9520e48acac86680ad616c38b62c0f2caaf17077211b59710a14ba66575c7a6f"
+  }
+}

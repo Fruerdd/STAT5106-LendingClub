@@ -1,0 +1,23 @@
+{
+  "status": "completed",
+  "candidate": "expanded_grade_31",
+  "identity": {
+    "n_models": 1,
+    "rows_per_model": 56318,
+    "prob_min": 0.0059284009387020435,
+    "prob_max": 0.7991706431092092,
+    "date_min": "2018-01-01 00:00:00",
+    "date_max": "2018-12-01 00:00:00"
+  },
+  "repeated_fit_matches": true,
+  "overall_bootstrap": 1000,
+  "subgroup_bootstrap": 500,
+  "paired_threshold_bootstrap": 1000,
+  "seed": 5106,
+  "thresholds_frozen_before_this_run": true,
+  "calibration_fitted_for_diagnostics_only": true,
+  "ivy_code_modified": false,
+  "attribution": "Original validation utilities by Ivy; follow-up extension implementation/execution assisted by Codex",
+  "scope": "Exploratory reused-test evaluation; original primary analysis and Ivy report preserved",
+  "additional_temporal_robustness": "Not run for this extension; original primary-model robustness does not transfer automatically"
+}

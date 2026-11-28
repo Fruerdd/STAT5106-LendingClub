@@ -1,0 +1,98 @@
+{
+  "status": "completed",
+  "modes": [
+    "current",
+    "native",
+    "native_indicators"
+  ],
+  "families": [
+    "xgb",
+    "hgb"
+  ],
+  "seed": 5106,
+  "scope": "Existing sources, target and frozen 60/20/20 cohort; numerical preparation only; grade proxy retained",
+  "training": "Two forward folds inside training60%; inner latest-month early stopping; refit fold fit block at fixed rounds",
+  "calibration": "Split each subsequent threshold block by whole months: earlier half fits sigmoid on logit score; later half chooses F1 threshold; score on separate later block",
+  "candidates": "For each of 3 modes: calibrated xgb, calibrated hgb, and conditional equal blend (max9); no hyperparameter grid",
+  "ensemble_gate": "Both training folds: disagreement>=1% and each member uniquely correct>=0.5% on later fold score block",
+  "choice": "Highest mean forward F1, then AP, then lower log loss; freeze one candidate before validation",
+  "final_fit": "Refit constituent models on entire60%, rounds=rounded median training fold stopping rounds; sigmoid fitted on pooled out-of-sample training calibration predictions",
+  "final_choice": "Compare one training-selected candidate with fully rerun current XGBoost by validation F1, AP, lower log loss; freeze threshold before scoring test",
+  "test": "Selected choice only plus rerun reference; previous test reuse makes assessment exploratory",
+  "versions": {
+    "python": "3.12.6",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "sklearn": "1.9.1",
+    "xgboost": "3.4.1"
+  },
+  "contract_sha256": "a3cd01ffdc53a4ec94b59fd51bd6fa57c00988e7aa7ea5ea3bbe765a99d4ebf5",
+  "source_hashes": {
+    "analysis/16_preprocessing_ensemble_rerun.py": "25e82bfc6ae5874981b2fdc0fb9e532da1897b8d003c92d264b10dd257f4b99a",
+    "src/preprocessing_experiment.py": "5ed14cdf83fc9e958a56176a7bdc8a923264f66362848051349d665c3374f3e1",
+    "src/predictive_modelling.py": "2092db69f048de56231c6a4af2a45e3491de12c62f6432546d13728a113689b4",
+    "src/predictive_extension.py": "f2e740105a0e9187c4ead497690d8f53198c5775b6f5ddbe8f5a5e4a078fcb65",
+    "src/xgboost_benchmark.py": "6df5251bda9775e2666dd1ba6ff0cf2fe949d90789d94eed38790595675557f4",
+    "src/scoped_tuning.py": "2f00f764757d15d40e0ec87a5e38fdfffbc41f64b39c907a89ca334fc5e1041d"
+  },
+  "training_selected": "native_blend",
+  "ensemble_eligibility": {
+    "current": true,
+    "native": true,
+    "native_indicators": true
+  },
+  "selected_on_validation": "rerun_current_xgb",
+  "threshold": 0.29415860772132874,
+  "predictor_columns": [
+    "fico_per_10",
+    "log2_annual_inc",
+    "log2_loan_to_annual_income",
+    "income_or_dti_missing",
+    "dti_per_10",
+    "revol_util_per_10",
+    "credit_history_years",
+    "emp_length_years",
+    "emp_length_years_was_missing",
+    "delinq_2yrs",
+    "inq_last_6mths",
+    "open_acc_per_5",
+    "pub_rec",
+    "term_months",
+    "purpose_grouped",
+    "home_ownership_grouped",
+    "verification_status",
+    "application_type",
+    "grade",
+    "log1p_loan_amount",
+    "payment_to_monthly_income",
+    "log1p_revolving_balance",
+    "total_credit_accounts",
+    "fraction_open_accounts",
+    "months_since_delinquency",
+    "months_since_record",
+    "addr_state"
+  ],
+  "rounds": {
+    "xgb": 643,
+    "hgb": 326
+  },
+  "calibration_parameters": {
+    "xgb": {
+      "intercept": -0.49120080513982456,
+      "slope": 1.04215645367725
+    },
+    "hgb": {
+      "intercept": 0.25885180866238455,
+      "slope": 1.0680889888681426
+    }
+  },
+  "reference_reproduced": true,
+  "prediction_export_exact": true,
+  "fitted_bundle_reload_exact": true,
+  "current_model_retained": true,
+  "f1_delta": 0.0,
+  "f1_difference_ci": [
+    0.0,
+    0.0
+  ]
+}

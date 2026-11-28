@@ -1,0 +1,3 @@
+# Optional benchmark dependencies; the original analysis requirements remain unchanged.
+-r requirements.txt
+xgboost==3.4.1

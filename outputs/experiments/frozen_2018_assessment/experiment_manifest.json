@@ -1,0 +1,37 @@
+{
+  "status": "completed",
+  "selected_on_2016": "regularized_15",
+  "selection": "Maximum 2016 average precision across nine registered candidates; log loss breaks ties",
+  "threshold_selection": "2017 only; maximum F1 and illustrative FN:FP cost 5:1",
+  "training": "Before 2017; same approved predictors and original outcome",
+  "assessment": "2018; previously examined in main study, explicitly exploratory test reuse",
+  "candidate_specification": {
+    "name": "regularized_15",
+    "native": false,
+    "max_iter": 800,
+    "max_leaf_nodes": 15,
+    "learning_rate": 0.05,
+    "min_samples_leaf": 100,
+    "l2_regularization": 10.0,
+    "patience": 30
+  },
+  "seed": 5106,
+  "bootstrap_resamples": 1000,
+  "primary_outputs_replaced": false,
+  "subgroup_or_test_result_model_selection": false,
+  "ap_delta": -0.00015905611855565605,
+  "ap_delta_ci": [
+    -0.001540045921589718,
+    0.001307586222863352
+  ],
+  "validation_selected_thresholds": {
+    "original_baseline": {
+      "maximum_validation_f1": 0.19542608201454062,
+      "validation_cost_5_to_1": 0.13914482067510953
+    },
+    "regularized_15": {
+      "maximum_validation_f1": 0.18663251180269427,
+      "validation_cost_5_to_1": 0.1401442993463506
+    }
+  }
+}

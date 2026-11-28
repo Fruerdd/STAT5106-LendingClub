@@ -1,0 +1,111 @@
+{
+  "status": "completed",
+  "candidates": [
+    {
+      "name": "xgb_depth3_unweighted",
+      "max_depth": 3,
+      "weight": "unweighted"
+    },
+    {
+      "name": "xgb_depth3_double",
+      "max_depth": 3,
+      "weight": "double"
+    },
+    {
+      "name": "xgb_depth3_balanced",
+      "max_depth": 3,
+      "weight": "balanced"
+    },
+    {
+      "name": "xgb_depth5_unweighted",
+      "max_depth": 5,
+      "weight": "unweighted"
+    },
+    {
+      "name": "xgb_depth5_double",
+      "max_depth": 5,
+      "weight": "double"
+    },
+    {
+      "name": "xgb_depth5_balanced",
+      "max_depth": 5,
+      "weight": "balanced"
+    }
+  ],
+  "seed": 5106,
+  "features": "Same 27 expanded grade predictors and training-only transforms as expanded_grade_31",
+  "round_selection": "Train before 2015-10-01; early stop on 2015 Q4 log loss, max 800 rounds, patience 40",
+  "candidate_fit": "Refit each candidate before 2016 using its fixed training-only round count",
+  "threshold_selection_for_candidate_comparison": "2016 H1 only; maximum F1; ties lowest threshold",
+  "candidate_selection": "Maximum 2016 H2 F1 at frozen H1 threshold; AP then lower log loss break ties",
+  "final_fit": "Before 2017; same selected rounds and training-derived class weight",
+  "final_threshold_selection": "2017 only; maximum F1",
+  "assessment": "2018 reused test; exploratory follow-up, not a fresh independent holdout",
+  "bootstrap": "1000 paired individual-loan percentile draws conditional on frozen fitted models and thresholds",
+  "fixed_settings": {
+    "learning_rate": 0.05,
+    "min_child_weight": 20,
+    "reg_lambda": 10.0,
+    "reg_alpha": 0.1,
+    "subsample": 0.85,
+    "colsample_bytree": 0.9,
+    "n_jobs": 2
+  },
+  "versions": {
+    "python": "3.12.6",
+    "xgboost": "3.4.1",
+    "numpy": "2.5.4",
+    "pandas": "2.3.3"
+  },
+  "primary_outputs_replaced": false,
+  "current_reference": "expanded_grade_31",
+  "development_counts": {
+    "early_train": 714458,
+    "early_stop": 114897,
+    "refit_train": 829355,
+    "threshold_h1": 174883,
+    "selection_h2": 118222
+  },
+  "selected_candidate": "xgb_depth5_double",
+  "selected_rounds": 441,
+  "predictor_columns": [
+    "fico_per_10",
+    "log2_annual_inc",
+    "log2_loan_to_annual_income",
+    "income_or_dti_missing",
+    "dti_per_10",
+    "revol_util_per_10",
+    "credit_history_years",
+    "emp_length_years",
+    "emp_length_years_was_missing",
+    "delinq_2yrs",
+    "inq_last_6mths",
+    "open_acc_per_5",
+    "pub_rec",
+    "term_months",
+    "purpose_grouped",
+    "home_ownership_grouped",
+    "verification_status",
+    "application_type",
+    "grade",
+    "log1p_loan_amount",
+    "payment_to_monthly_income",
+    "log1p_revolving_balance",
+    "total_credit_accounts",
+    "fraction_open_accounts",
+    "months_since_delinquency",
+    "months_since_record",
+    "addr_state"
+  ],
+  "source_hashes": {
+    "analysis/12_xgboost_benchmark.py": "d2e6ec35625e586b86f650fd58b111a482e078749b1f6b1d3cb694ded2454df9",
+    "src/xgboost_benchmark.py": "6df5251bda9775e2666dd1ba6ff0cf2fe949d90789d94eed38790595675557f4",
+    "src/predictive_extension.py": "f2e740105a0e9187c4ead497690d8f53198c5775b6f5ddbe8f5a5e4a078fcb65"
+  },
+  "final_threshold": 0.34550079703330994,
+  "final_training_positive_weight": 2.0,
+  "model_reload_predictions_match": true,
+  "reference_prediction_identity_checks_passed": true,
+  "development_f1_exceeds_reference": true,
+  "test_f1_delta": 0.0014085768200032822
+}

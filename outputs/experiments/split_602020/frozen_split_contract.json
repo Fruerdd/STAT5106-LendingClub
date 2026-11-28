@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "method": "chronological_602020_ID_hash_month_ties",
+  "partitions": {
+    "train": {
+      "rows": 808859,
+      "identity_date_outcome_sha256": "01596bbef1ff97836a36b216ce6cf290859c765013c9e1caa0d60b9ef5c5a942"
+    },
+    "validation": {
+      "rows": 269620,
+      "identity_date_outcome_sha256": "711231e71b46db7af8908fd64f34279b95c196c2a6b7737198c0543a9e24f136"
+    },
+    "test": {
+      "rows": 269620,
+      "identity_date_outcome_sha256": "5fe862d05b2f6e3f4f2bbdc86748d229fbd9990b27632674347dd466c1ea2b74"
+    }
+  }
+}

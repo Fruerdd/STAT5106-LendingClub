@@ -1,0 +1,75 @@
+{
+  "status": "completed",
+  "candidates": [
+    {
+      "name": "grade_31",
+      "native": true,
+      "max_iter": 800,
+      "max_leaf_nodes": 31,
+      "learning_rate": 0.05,
+      "min_samples_leaf": 100,
+      "l2_regularization": 5.0,
+      "patience": 30
+    },
+    {
+      "name": "grade_63",
+      "native": true,
+      "max_iter": 800,
+      "max_leaf_nodes": 63,
+      "learning_rate": 0.05,
+      "min_samples_leaf": 100,
+      "l2_regularization": 10.0,
+      "patience": 30
+    }
+  ],
+  "selection": "2016 average precision; lower log loss breaks ties",
+  "features": "Approved Model B without issue_year: grade replaces interest rate; no sub_grade",
+  "preprocessing": "Numeric imputers/caps and rare maps fitted on training only; native categorical splits",
+  "tuning": "Train before 2016; evaluate 2016",
+  "comparison": "Refit before 2017; evaluate 2017 only",
+  "2018_evaluated": false,
+  "scope": "Additional exploratory phase; neither 2017 nor 2018 is a new untouched holdout",
+  "seed": 5106,
+  "predictor_columns": [
+    "fico_per_10",
+    "log2_annual_inc",
+    "log2_loan_to_annual_income",
+    "income_or_dti_missing",
+    "dti_per_10",
+    "revol_util_per_10",
+    "credit_history_years",
+    "emp_length_years",
+    "emp_length_years_was_missing",
+    "delinq_2yrs",
+    "inq_last_6mths",
+    "open_acc_per_5",
+    "pub_rec",
+    "term_months",
+    "purpose_grouped",
+    "home_ownership_grouped",
+    "verification_status",
+    "application_type",
+    "grade"
+  ],
+  "selected_on_2016": "grade_63",
+  "comparison_2017": {
+    "candidate": "grade_63",
+    "rows": 169321,
+    "roc_auc": 0.7087457100436692,
+    "pr_auc": 0.40666938748981873,
+    "brier_score": 0.16190569957487683,
+    "log_loss": 0.494444261091911,
+    "default_rate": 0.23132984095298278,
+    "precision_at_recall70": 0.3472941653263086
+  },
+  "thresholds_selected_on_2016": {
+    "grade_31": {
+      "recall_at_least_70": 0.16437437532309093,
+      "maximum_f1": 0.1678702443089853
+    },
+    "grade_63": {
+      "recall_at_least_70": 0.16437192615984977,
+      "maximum_f1": 0.16821811496359076
+    }
+  }
+}

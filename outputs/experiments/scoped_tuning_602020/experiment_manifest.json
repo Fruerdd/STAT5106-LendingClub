@@ -1,0 +1,125 @@
+{
+  "status": "completed",
+  "candidates": [
+    {
+      "name": "grade_depth5_double_reference",
+      "proxy": "grade",
+      "max_depth": 5,
+      "weight": "double",
+      "min_child_weight": 20,
+      "reg_lambda": 10.0,
+      "subsample": 0.85,
+      "colsample_bytree": 0.9
+    },
+    {
+      "name": "grade_depth5_unweighted",
+      "proxy": "grade",
+      "max_depth": 5,
+      "weight": "unweighted",
+      "min_child_weight": 20,
+      "reg_lambda": 10.0,
+      "subsample": 0.85,
+      "colsample_bytree": 0.9
+    },
+    {
+      "name": "grade_depth3_regularized",
+      "proxy": "grade",
+      "max_depth": 3,
+      "weight": "unweighted",
+      "min_child_weight": 40,
+      "reg_lambda": 20.0,
+      "subsample": 0.9,
+      "colsample_bytree": 0.9
+    },
+    {
+      "name": "grade_depth5_regularized",
+      "proxy": "grade",
+      "max_depth": 5,
+      "weight": "unweighted",
+      "min_child_weight": 40,
+      "reg_lambda": 20.0,
+      "subsample": 0.9,
+      "colsample_bytree": 1.0
+    },
+    {
+      "name": "grade_depth7_regularized",
+      "proxy": "grade",
+      "max_depth": 7,
+      "weight": "unweighted",
+      "min_child_weight": 40,
+      "reg_lambda": 20.0,
+      "subsample": 0.85,
+      "colsample_bytree": 0.9
+    },
+    {
+      "name": "subgrade_depth5_regularized",
+      "proxy": "sub_grade",
+      "max_depth": 5,
+      "weight": "unweighted",
+      "min_child_weight": 40,
+      "reg_lambda": 20.0,
+      "subsample": 0.9,
+      "colsample_bytree": 1.0
+    }
+  ],
+  "outer_split_contract_sha256": "a3cd01ffdc53a4ec94b59fd51bd6fa57c00988e7aa7ea5ea3bbe765a99d4ebf5",
+  "scope": "Same resolved-loan cohort and existing registered origination-only feature extension; no new raw fields or inference changes",
+  "training_search": "Two whole-month forward folds inside training60%; early stopping uses latest whole months of each fit block; thresholds use separate subsequent block; score uses later block",
+  "search_choice": "Mean forward F1, then mean AP, then lower mean log loss; no outer validation/test input",
+  "rounds": "Median of selected candidate training-only fold stopping rounds, rounded to nearest integer",
+  "final_choice": "Compare one training-selected candidate with cached current XGBoost on outer validation F1, then AP, then lower log loss; threshold maximizes outer validation F1",
+  "assessment": "Freeze final choice and threshold before selected model test scoring; previously examined test remains exploratory",
+  "max_rounds": 800,
+  "seed": 5106,
+  "versions": {
+    "python": "3.12.6",
+    "xgboost": "3.4.1",
+    "pandas": "2.3.3",
+    "numpy": "2.5.4"
+  },
+  "source_hashes": {
+    "analysis/15_scoped_predictive_tuning.py": "0bc8375867635385bdbde0ef148a10657ee1a8df7daba806682bce5800e6517b",
+    "src/scoped_tuning.py": "2f00f764757d15d40e0ec87a5e38fdfffbc41f64b39c907a89ca334fc5e1041d",
+    "src/proportional_split.py": "487d0c24d228215328a2588256ab29f9794c8d83556186db33fd9b3c3bca5ca2",
+    "src/predictive_extension.py": "f2e740105a0e9187c4ead497690d8f53198c5775b6f5ddbe8f5a5e4a078fcb65"
+  },
+  "training_selected": "grade_depth5_unweighted",
+  "final_rounds": 457,
+  "selected_on_validation": "current_xgb_depth5_double",
+  "selected_threshold": 0.2941586,
+  "predictors": [
+    "fico_per_10",
+    "log2_annual_inc",
+    "log2_loan_to_annual_income",
+    "income_or_dti_missing",
+    "dti_per_10",
+    "revol_util_per_10",
+    "credit_history_years",
+    "emp_length_years",
+    "emp_length_years_was_missing",
+    "delinq_2yrs",
+    "inq_last_6mths",
+    "open_acc_per_5",
+    "pub_rec",
+    "term_months",
+    "purpose_grouped",
+    "home_ownership_grouped",
+    "verification_status",
+    "application_type",
+    "grade",
+    "log1p_loan_amount",
+    "payment_to_monthly_income",
+    "log1p_revolving_balance",
+    "total_credit_accounts",
+    "fraction_open_accounts",
+    "months_since_delinquency",
+    "months_since_record",
+    "addr_state"
+  ],
+  "current_model_retained": true,
+  "paired_f1_delta": 0.0,
+  "paired_f1_ci": [
+    0.0,
+    0.0
+  ]
+}

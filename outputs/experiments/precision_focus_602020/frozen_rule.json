@@ -1,0 +1,6 @@
+{
+  "model": "reference_plus_combined",
+  "rule": "ensemble_precision",
+  "threshold": 0.33609484136104584,
+  "validation_recall_floor": 0.6
+}

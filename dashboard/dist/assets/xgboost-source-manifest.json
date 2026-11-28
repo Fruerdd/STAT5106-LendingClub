@@ -1,0 +1,22 @@
+{
+  "xgboost_comparison_2018.csv": {
+    "source": "outputs/experiments/xgboost_benchmark/comparison_2018.csv",
+    "sha256": "19a53a13edf5d2eef5c8868c0b97a5c65ff5bc78cba1d299707247ada447822e"
+  },
+  "xgboost_paired_differences.csv": {
+    "source": "outputs/experiments/xgboost_benchmark/paired_differences.csv",
+    "sha256": "694242c5289e13ec04a7e60077cea8ec00581b82d090044b319d28781a98b933"
+  },
+  "xgboost_development_comparison.csv": {
+    "source": "outputs/experiments/xgboost_benchmark/development_comparison.csv",
+    "sha256": "3e2334ddbc977efa7cf834fdde3a3453a01ede02009492f65e11dd751ef4da07"
+  },
+  "xgboost_development_reference.csv": {
+    "source": "outputs/experiments/xgboost_benchmark/development_reference.csv",
+    "sha256": "0a0b4a5e1855ddc8c4310a94bd251a5bc7bbabb2deaedb4b00ab47c0b258c455"
+  },
+  "xgboost_calibration.csv": {
+    "source": "outputs/experiments/xgboost_benchmark/calibration.csv",
+    "sha256": "dbecd197a73c92a404b6cd6d70dfac168a4ab09565b0b2ea5cdcb27ff06f149b"
+  }
+}

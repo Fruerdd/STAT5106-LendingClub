@@ -1,0 +1,131 @@
+{
+  "status": "completed",
+  "candidates": [
+    {
+      "name": "original_baseline",
+      "native": false,
+      "max_iter": 300,
+      "max_leaf_nodes": 31,
+      "learning_rate": 0.08,
+      "min_samples_leaf": 20,
+      "l2_regularization": 1.0,
+      "patience": 20
+    },
+    {
+      "name": "longer_31",
+      "native": false,
+      "max_iter": 800,
+      "max_leaf_nodes": 31,
+      "learning_rate": 0.08,
+      "min_samples_leaf": 20,
+      "l2_regularization": 1.0,
+      "patience": 30
+    },
+    {
+      "name": "slower_31",
+      "native": false,
+      "max_iter": 1000,
+      "max_leaf_nodes": 31,
+      "learning_rate": 0.04,
+      "min_samples_leaf": 50,
+      "l2_regularization": 5.0,
+      "patience": 30
+    },
+    {
+      "name": "regularized_15",
+      "native": false,
+      "max_iter": 800,
+      "max_leaf_nodes": 15,
+      "learning_rate": 0.05,
+      "min_samples_leaf": 100,
+      "l2_regularization": 10.0,
+      "patience": 30
+    },
+    {
+      "name": "richer_63",
+      "native": false,
+      "max_iter": 800,
+      "max_leaf_nodes": 63,
+      "learning_rate": 0.05,
+      "min_samples_leaf": 100,
+      "l2_regularization": 5.0,
+      "patience": 30
+    },
+    {
+      "name": "native_31",
+      "native": true,
+      "max_iter": 800,
+      "max_leaf_nodes": 31,
+      "learning_rate": 0.05,
+      "min_samples_leaf": 100,
+      "l2_regularization": 5.0,
+      "patience": 30
+    },
+    {
+      "name": "native_63",
+      "native": true,
+      "max_iter": 800,
+      "max_leaf_nodes": 63,
+      "learning_rate": 0.05,
+      "min_samples_leaf": 100,
+      "l2_regularization": 10.0,
+      "patience": 30
+    }
+  ],
+  "selection_metric": "2016 average precision; lower log loss breaks ties",
+  "tuning_train": "issue_date < 2016-01-01",
+  "tuning_evaluation": "2016-01-01 <= issue_date < 2017-01-01",
+  "comparison_train": "issue_date < 2017-01-01",
+  "comparison_evaluation": "2017-01-01 <= issue_date < 2018-01-01",
+  "comparison_models": "Original baseline and the single 2016-selected candidate only",
+  "test_2018_evaluated": false,
+  "scope": "Exploratory follow-up: 2017 and 2018 have previously been inspected in the main analysis",
+  "features": "Existing Model C feature contract; no additions or removals; training-only imputation, caps and rare maps",
+  "encoding_change": "Native candidates replace one-hot categories with train-learned category codes; unseen codes become missing",
+  "threshold_selection": "2016 predictions only; frozen thresholds transferred to refitted models for 2017",
+  "curve_metric": "Maximum precision on the evaluation PR curve subject to recall >= 70%; descriptive, not a deployment threshold",
+  "bootstrap": "500 paired loan resamples; 95% percentile CI for difference in 2017 average precision; fixed fitted models",
+  "seed": 5106,
+  "cohort_rows": {
+    "tune_train": 829355,
+    "tune": 293105,
+    "comparison": 169321
+  },
+  "selected_on_2016": "regularized_15",
+  "comparison_ap_delta": 0.0007676531053166791,
+  "comparison_ap_delta_ci": [
+    0.00010529975304836155,
+    0.0015472096798916017
+  ],
+  "thresholds_selected_on_2016": {
+    "original_baseline": {
+      "recall_at_least_70": 0.15948444531731965,
+      "maximum_f1": 0.16430341469101697
+    },
+    "longer_31": {
+      "recall_at_least_70": 0.1594484773502327,
+      "maximum_f1": 0.16327362443133422
+    },
+    "slower_31": {
+      "recall_at_least_70": 0.159734942249246,
+      "maximum_f1": 0.16744830973663527
+    },
+    "regularized_15": {
+      "recall_at_least_70": 0.15974977031195964,
+      "maximum_f1": 0.1698428211573324
+    },
+    "richer_63": {
+      "recall_at_least_70": 0.15971100579846312,
+      "maximum_f1": 0.1676966207659226
+    },
+    "native_31": {
+      "recall_at_least_70": 0.1601554364875086,
+      "maximum_f1": 0.16972545465097488
+    },
+    "native_63": {
+      "recall_at_least_70": 0.16007406158607168,
+      "maximum_f1": 0.16690331704291914
+    }
+  },
+  "positive_conditional_ap_interval_on_2017": true
+}
